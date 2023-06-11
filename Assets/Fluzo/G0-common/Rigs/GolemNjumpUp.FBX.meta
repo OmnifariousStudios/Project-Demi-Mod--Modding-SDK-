@@ -1,0 +1,910 @@
+fileFormatVersion: 2
+guid: d16be804c785b8746b5f1adb712575c5
+timeCreated: 1455532620
+licenseType: Store
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: Golem
+    100002: GolemHead
+    100004: GolemLCalf
+    100006: GolemLCollarbone
+    100008: GolemLDigit11
+    100010: GolemLDigit12
+    100012: GolemLDigit13
+    100014: GolemLDigit21
+    100016: GolemLDigit22
+    100018: GolemLDigit23
+    100020: GolemLDigit31
+    100022: GolemLDigit32
+    100024: GolemLDigit33
+    100026: GolemLDigit41
+    100028: GolemLDigit42
+    100030: GolemLDigit43
+    100032: GolemLFoot
+    100034: GolemLForearm
+    100036: GolemLPalm
+    100038: GolemLPlatform
+    100040: GolemLThigh
+    100042: GolemLUpperarm
+    100044: GolemLUpVectorNode
+    100046: GolemLUpVectorNode 1
+    100048: GolemNeck1
+    100050: GolemNeck2
+    100052: //RootNode
+    100054: GolemPelvis
+    100056: GolemRCalf
+    100058: GolemRCollarbone
+    100060: GolemRDigit11
+    100062: GolemRDigit12
+    100064: GolemRDigit13
+    100066: GolemRDigit21
+    100068: GolemRDigit22
+    100070: GolemRDigit23
+    100072: GolemRDigit31
+    100074: GolemRDigit32
+    100076: GolemRDigit33
+    100078: GolemRDigit41
+    100080: GolemRDigit42
+    100082: GolemRDigit43
+    100084: GolemRFoot
+    100086: GolemRForearm
+    100088: GolemRibcage
+    100090: GolemRPalm
+    100092: GolemRPlatform
+    100094: GolemRThigh
+    100096: GolemRUpperarm
+    100098: GolemRUpVectorNode
+    100100: GolemRUpVectorNode 1
+    100102: GolemSpine
+    400000: Golem
+    400002: GolemHead
+    400004: GolemLCalf
+    400006: GolemLCollarbone
+    400008: GolemLDigit11
+    400010: GolemLDigit12
+    400012: GolemLDigit13
+    400014: GolemLDigit21
+    400016: GolemLDigit22
+    400018: GolemLDigit23
+    400020: GolemLDigit31
+    400022: GolemLDigit32
+    400024: GolemLDigit33
+    400026: GolemLDigit41
+    400028: GolemLDigit42
+    400030: GolemLDigit43
+    400032: GolemLFoot
+    400034: GolemLForearm
+    400036: GolemLPalm
+    400038: GolemLPlatform
+    400040: GolemLThigh
+    400042: GolemLUpperarm
+    400044: GolemLUpVectorNode
+    400046: GolemLUpVectorNode 1
+    400048: GolemNeck1
+    400050: GolemNeck2
+    400052: //RootNode
+    400054: GolemPelvis
+    400056: GolemRCalf
+    400058: GolemRCollarbone
+    400060: GolemRDigit11
+    400062: GolemRDigit12
+    400064: GolemRDigit13
+    400066: GolemRDigit21
+    400068: GolemRDigit22
+    400070: GolemRDigit23
+    400072: GolemRDigit31
+    400074: GolemRDigit32
+    400076: GolemRDigit33
+    400078: GolemRDigit41
+    400080: GolemRDigit42
+    400082: GolemRDigit43
+    400084: GolemRFoot
+    400086: GolemRForearm
+    400088: GolemRibcage
+    400090: GolemRPalm
+    400092: GolemRPlatform
+    400094: GolemRThigh
+    400096: GolemRUpperarm
+    400098: GolemRUpVectorNode
+    400100: GolemRUpVectorNode 1
+    400102: GolemSpine
+    7400000: GolemJumpUp
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleRotations: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: "\nClip 'Take 001' has import animation warnings that
+      might lower retargeting quality:\nNote: Activate translation DOF on avatar to
+      improve retargeting quality.\n\t'GolemRibcage' is inbetween humanoid transforms
+      and has rotation animation that will be discarded.\n\t'GolemRCollarbone' has
+      translation animation that will be discarded.\n\t'GolemNeck2' is inbetween humanoid
+      transforms and has rotation animation that will be discarded.\n"
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 3
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: GolemJumpUp
+      takeName: Take 001
+      firstFrame: 4
+      lastFrame: 10
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Golem
+        weight: 0
+      - path: GolemLPlatform
+        weight: 0
+      - path: GolemPelvis
+        weight: 1
+      - path: GolemPelvis/GolemLThigh
+        weight: 1
+      - path: GolemPelvis/GolemLThigh/GolemLCalf
+        weight: 1
+      - path: GolemPelvis/GolemLThigh/GolemLCalf/GolemLFoot
+        weight: 1
+      - path: GolemPelvis/GolemLUpVectorNode
+        weight: 0
+      - path: GolemPelvis/GolemRThigh
+        weight: 1
+      - path: GolemPelvis/GolemRThigh/GolemRCalf
+        weight: 1
+      - path: GolemPelvis/GolemRThigh/GolemRCalf/GolemRFoot
+        weight: 1
+      - path: GolemPelvis/GolemRUpVectorNode
+        weight: 0
+      - path: GolemPelvis/GolemSpine
+        weight: 1
+      - path: GolemPelvis/GolemSpine/GolemRibcage
+        weight: 1
+      - path: GolemPelvis/GolemSpine/GolemRibcage/GolemLCollarbone
+        weight: 1
+      - path: GolemPelvis/GolemSpine/GolemRibcage/GolemLCollarbone/GolemLUpperarm
+        weight: 1
+      - path: GolemPelvis/GolemSpine/GolemRibcage/GolemLCollarbone/GolemLUpperarm/GolemLForearm
+        weight: 1
+      - path: GolemPelvis/GolemSpine/GolemRibcage/GolemLCollarbone/GolemLUpperarm/GolemLForearm/GolemLPalm
+        weight: 1
+      - path: GolemPelvis/GolemSpine/GolemRibcage/GolemLCollarbone/GolemLUpperarm/GolemLForearm/GolemLPalm/GolemLDigit11
+        weight: 1
+      - path: GolemPelvis/GolemSpine/GolemRibcage/GolemLCollarbone/GolemLUpperarm/GolemLForearm/GolemLPalm/GolemLDigit11/GolemLDigit12
+        weight: 1
+      - path: GolemPelvis/GolemSpine/GolemRibcage/GolemLCollarbone/GolemLUpperarm/GolemLForearm/GolemLPalm/GolemLDigit11/GolemLDigit12/GolemLDigit13
+        weight: 1
+      - path: GolemPelvis/GolemSpine/GolemRibcage/GolemLCollarbone/GolemLUpperarm/GolemLForearm/GolemLPalm/GolemLDigit21
+        weight: 1
+      - path: GolemPelvis/GolemSpine/GolemRibcage/GolemLCollarbone/GolemLUpperarm/GolemLForearm/GolemLPalm/GolemLDigit21/GolemLDigit22
+        weight: 1
+      - path: GolemPelvis/GolemSpine/GolemRibcage/GolemLCollarbone/GolemLUpperarm/GolemLForearm/GolemLPalm/GolemLDigit21/GolemLDigit22/GolemLDigit23
+        weight: 1
+      - path: GolemPelvis/GolemSpine/GolemRibcage/GolemLCollarbone/GolemLUpperarm/GolemLForearm/GolemLPalm/GolemLDigit31
+        weight: 1
+      - path: GolemPelvis/GolemSpine/GolemRibcage/GolemLCollarbone/GolemLUpperarm/GolemLForearm/GolemLPalm/GolemLDigit31/GolemLDigit32
+        weight: 1
+      - path: GolemPelvis/GolemSpine/GolemRibcage/GolemLCollarbone/GolemLUpperarm/GolemLForearm/GolemLPalm/GolemLDigit31/GolemLDigit32/GolemLDigit33
+        weight: 1
+      - path: GolemPelvis/GolemSpine/GolemRibcage/GolemLCollarbone/GolemLUpperarm/GolemLForearm/GolemLPalm/GolemLDigit41
+        weight: 1
+      - path: GolemPelvis/GolemSpine/GolemRibcage/GolemLCollarbone/GolemLUpperarm/GolemLForearm/GolemLPalm/GolemLDigit41/GolemLDigit42
+        weight: 1
+      - path: GolemPelvis/GolemSpine/GolemRibcage/GolemLCollarbone/GolemLUpperarm/GolemLForearm/GolemLPalm/GolemLDigit41/GolemLDigit42/GolemLDigit43
+        weight: 1
+      - path: GolemPelvis/GolemSpine/GolemRibcage/GolemLUpVectorNode 1
+        weight: 0
+      - path: GolemPelvis/GolemSpine/GolemRibcage/GolemNeck1
+        weight: 1
+      - path: GolemPelvis/GolemSpine/GolemRibcage/GolemNeck1/GolemNeck2
+        weight: 1
+      - path: GolemPelvis/GolemSpine/GolemRibcage/GolemNeck1/GolemNeck2/GolemHead
+        weight: 1
+      - path: GolemPelvis/GolemSpine/GolemRibcage/GolemRCollarbone
+        weight: 1
+      - path: GolemPelvis/GolemSpine/GolemRibcage/GolemRCollarbone/GolemRUpperarm
+        weight: 1
+      - path: GolemPelvis/GolemSpine/GolemRibcage/GolemRCollarbone/GolemRUpperarm/GolemRForearm
+        weight: 1
+      - path: GolemPelvis/GolemSpine/GolemRibcage/GolemRCollarbone/GolemRUpperarm/GolemRForearm/GolemRPalm
+        weight: 1
+      - path: GolemPelvis/GolemSpine/GolemRibcage/GolemRCollarbone/GolemRUpperarm/GolemRForearm/GolemRPalm/GolemRDigit11
+        weight: 1
+      - path: GolemPelvis/GolemSpine/GolemRibcage/GolemRCollarbone/GolemRUpperarm/GolemRForearm/GolemRPalm/GolemRDigit11/GolemRDigit12
+        weight: 1
+      - path: GolemPelvis/GolemSpine/GolemRibcage/GolemRCollarbone/GolemRUpperarm/GolemRForearm/GolemRPalm/GolemRDigit11/GolemRDigit12/GolemRDigit13
+        weight: 1
+      - path: GolemPelvis/GolemSpine/GolemRibcage/GolemRCollarbone/GolemRUpperarm/GolemRForearm/GolemRPalm/GolemRDigit21
+        weight: 1
+      - path: GolemPelvis/GolemSpine/GolemRibcage/GolemRCollarbone/GolemRUpperarm/GolemRForearm/GolemRPalm/GolemRDigit21/GolemRDigit22
+        weight: 1
+      - path: GolemPelvis/GolemSpine/GolemRibcage/GolemRCollarbone/GolemRUpperarm/GolemRForearm/GolemRPalm/GolemRDigit21/GolemRDigit22/GolemRDigit23
+        weight: 1
+      - path: GolemPelvis/GolemSpine/GolemRibcage/GolemRCollarbone/GolemRUpperarm/GolemRForearm/GolemRPalm/GolemRDigit31
+        weight: 1
+      - path: GolemPelvis/GolemSpine/GolemRibcage/GolemRCollarbone/GolemRUpperarm/GolemRForearm/GolemRPalm/GolemRDigit31/GolemRDigit32
+        weight: 1
+      - path: GolemPelvis/GolemSpine/GolemRibcage/GolemRCollarbone/GolemRUpperarm/GolemRForearm/GolemRPalm/GolemRDigit31/GolemRDigit32/GolemRDigit33
+        weight: 1
+      - path: GolemPelvis/GolemSpine/GolemRibcage/GolemRCollarbone/GolemRUpperarm/GolemRForearm/GolemRPalm/GolemRDigit41
+        weight: 1
+      - path: GolemPelvis/GolemSpine/GolemRibcage/GolemRCollarbone/GolemRUpperarm/GolemRForearm/GolemRPalm/GolemRDigit41/GolemRDigit42
+        weight: 1
+      - path: GolemPelvis/GolemSpine/GolemRibcage/GolemRCollarbone/GolemRUpperarm/GolemRForearm/GolemRPalm/GolemRDigit41/GolemRDigit42/GolemRDigit43
+        weight: 1
+      - path: GolemPelvis/GolemSpine/GolemRibcage/GolemRUpVectorNode 1
+        weight: 0
+      - path: GolemRPlatform
+        weight: 0
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human:
+    - boneName: GolemPelvis
+      humanName: Hips
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: GolemLThigh
+      humanName: LeftUpperLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: GolemRThigh
+      humanName: RightUpperLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: GolemLCalf
+      humanName: LeftLowerLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: GolemRCalf
+      humanName: RightLowerLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: GolemLFoot
+      humanName: LeftFoot
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: GolemRFoot
+      humanName: RightFoot
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: GolemSpine
+      humanName: Spine
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: GolemNeck1
+      humanName: Neck
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: GolemHead
+      humanName: Head
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: GolemLCollarbone
+      humanName: LeftShoulder
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: GolemRCollarbone
+      humanName: RightShoulder
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: GolemLUpperarm
+      humanName: LeftUpperArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: GolemRUpperarm
+      humanName: RightUpperArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: GolemLForearm
+      humanName: LeftLowerArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: GolemRForearm
+      humanName: RightLowerArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: GolemLPalm
+      humanName: LeftHand
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: GolemRPalm
+      humanName: RightHand
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: GolemLDigit11
+      humanName: Left Index Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: GolemLDigit12
+      humanName: Left Index Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: GolemLDigit13
+      humanName: Left Index Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: GolemLDigit21
+      humanName: Left Middle Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: GolemLDigit22
+      humanName: Left Middle Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: GolemLDigit23
+      humanName: Left Middle Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: GolemLDigit31
+      humanName: Left Ring Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: GolemLDigit32
+      humanName: Left Ring Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: GolemLDigit33
+      humanName: Left Ring Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: GolemLDigit41
+      humanName: Left Little Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: GolemLDigit42
+      humanName: Left Little Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: GolemLDigit43
+      humanName: Left Little Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: GolemRDigit11
+      humanName: Right Index Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: GolemRDigit12
+      humanName: Right Index Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: GolemRDigit13
+      humanName: Right Index Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: GolemRDigit21
+      humanName: Right Middle Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: GolemRDigit22
+      humanName: Right Middle Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: GolemRDigit23
+      humanName: Right Middle Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: GolemRDigit31
+      humanName: Right Ring Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: GolemRDigit32
+      humanName: Right Ring Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: GolemRDigit33
+      humanName: Right Ring Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: GolemRDigit41
+      humanName: Right Little Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: GolemRDigit42
+      humanName: Right Little Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: GolemRDigit43
+      humanName: Right Little Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    skeleton:
+    - name: GolemNjumpUp(Clone)
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: Golem
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0.5000001, y: -0.50000006, z: -0.4999999, w: 0.49999997}
+      scale: {x: 0.0254, y: 0.0254, z: 0.0254}
+      transformModified: 1
+    - name: GolemLPlatform
+      position: {x: -0.7666793, y: -0.000000007804431, z: 0.49792197}
+      rotation: {x: 0.49999997, y: -0.49999982, z: -0.5000001, w: 0.50000024}
+      scale: {x: 0.0254, y: 0.0254, z: 0.0254}
+      transformModified: 1
+    - name: GolemPelvis
+      position: {x: 0.00000017817153, y: 4.232052, z: -0.17448986}
+      rotation: {x: 0.49912265, y: -0.50086725, z: -0.4991312, w: 0.5008759}
+      scale: {x: 0.0254, y: 0.0254, z: 0.0254}
+      transformModified: 1
+    - name: GolemLThigh
+      position: {x: 12.385315, y: 6.8265114, z: 34.479565}
+      rotation: {x: 0.074706376, y: -0.5841235, z: 0.8032671, w: -0.08933445}
+      scale: {x: 0.99999964, y: 1.0000001, z: 1.000001}
+      transformModified: 1
+    - name: GolemLCalf
+      position: {x: -64.4519, y: -0.000019073486, z: 0.000045776367}
+      rotation: {x: 0.0021784005, y: 0.030492302, z: -0.0049519236, w: 0.99952036}
+      scale: {x: 1.0000004, y: 0.99999964, z: 0.9999992}
+      transformModified: 1
+    - name: GolemLFoot
+      position: {x: -65.33681, y: -0.0000019073486, z: 0.0000009536743}
+      rotation: {x: -0.7235396, y: -0.35608095, z: -0.2606563, w: 0.5308061}
+      scale: {x: 1.0000001, y: 1.0000002, z: 1.0000006}
+      transformModified: 1
+    - name: GolemLUpVectorNode
+      position: {x: 75.46951, y: 73.80795, z: 31.809355}
+      rotation: {x: -2.0463188e-11, y: -0.000000056220397, z: -2.3283067e-10, w: 1}
+      scale: {x: 0.99999994, y: 1.0000006, z: 0.99999994}
+      transformModified: 1
+    - name: GolemRThigh
+      position: {x: 10.864868, y: 6.831772, z: -32.491703}
+      rotation: {x: -0.08025551, y: 0.6301763, z: 0.76726574, w: -0.08797788}
+      scale: {x: 1.0000004, y: 1.0000007, z: 1.0000004}
+      transformModified: 1
+    - name: GolemRCalf
+      position: {x: -65.58883, y: -0.0000076293945, z: -0.000005722046}
+      rotation: {x: -0.0032448631, y: -0.032406945, z: -0.000761455, w: 0.9994692}
+      scale: {x: 1.0000007, y: 1, z: 0.99999976}
+      transformModified: 1
+    - name: GolemRFoot
+      position: {x: -67.0544, y: 0, z: -0.000002861023}
+      rotation: {x: 0.6913664, y: 0.34243104, z: -0.28413886, w: 0.5692264}
+      scale: {x: 1.0000007, y: 1.0000007, z: 0.9999994}
+      transformModified: 1
+    - name: GolemRUpVectorNode
+      position: {x: 75.20835, y: 73.28126, z: -32.001156}
+      rotation: {x: -2.0463188e-11, y: -0.00000005623495, z: -2.3283067e-10, w: 1}
+      scale: {x: 0.99999994, y: 1.0000006, z: 0.99999994}
+      transformModified: 1
+    - name: GolemSpine
+      position: {x: -4.5567627, y: 5.929535, z: -0.0000022047316}
+      rotation: {x: 0.000012177676, y: 0.00010076126, z: 0.13080952, w: 0.9914075}
+      scale: {x: 1.0000001, y: 1.0000002, z: 1}
+      transformModified: 1
+    - name: GolemRibcage
+      position: {x: -67.26915, y: 0, z: 0}
+      rotation: {x: -0.0000119921015, y: -0.00010071002, z: -0.13253875, w: 0.9911778}
+      scale: {x: 0.99999964, y: 0.9999997, z: 1}
+      transformModified: 1
+    - name: GolemLCollarbone
+      position: {x: 2.543518, y: 14.87249, z: 4.412341}
+      rotation: {x: 0.008677901, y: 0.5998368, z: 0.09555306, w: 0.79434884}
+      scale: {x: 1.0000008, y: 1.0000001, z: 1}
+      transformModified: 1
+    - name: GolemLUpperarm
+      position: {x: -50.448486, y: 0, z: -0.000015258789}
+      rotation: {x: 0.17749141, y: 0.1394855, z: -0.03720564, w: 0.97347647}
+      scale: {x: 1.0000004, y: 0.9999997, z: 0.9999999}
+      transformModified: 1
+    - name: GolemLForearm
+      position: {x: -50.107155, y: 0, z: 0.000015258789}
+      rotation: {x: 0.14300382, y: -0.03222596, z: -0.056454215, w: 0.9875851}
+      scale: {x: 1.0000017, y: 0.99999905, z: 1.0000004}
+      transformModified: 1
+    - name: GolemLPalm
+      position: {x: -65.404755, y: -0.000015258789, z: 0}
+      rotation: {x: 0.8756734, y: 0.0072003007, z: -0.019088682, w: -0.48247263}
+      scale: {x: 1.0000021, y: 0.9999999, z: 0.9999977}
+      transformModified: 1
+    - name: GolemLDigit11
+      position: {x: -8.5979, y: -4.62381, z: 13.532074}
+      rotation: {x: 0.21778758, y: 0.31566563, z: 0.016131872, w: 0.9233979}
+      scale: {x: 1.0000057, y: 1.0000014, z: 0.9999937}
+      transformModified: 1
+    - name: GolemLDigit12
+      position: {x: -4.5446243, y: -0.000015258789, z: 0.000015258789}
+      rotation: {x: -0.036994234, y: 0.02947006, z: 0.025257433, w: 0.99856144}
+      scale: {x: 1.0000031, y: 1.0000013, z: 0.99999756}
+      transformModified: 1
+    - name: GolemLDigit13
+      position: {x: -4.5428505, y: 0.000015258789, z: 0.000015258789}
+      rotation: {x: -0.018156435, y: 0.018680314, z: 0.06936352, w: 0.9972513}
+      scale: {x: 1.0000033, y: 1.000001, z: 0.9999972}
+      transformModified: 1
+    - name: GolemLDigit21
+      position: {x: -17.775787, y: -3.3587646, z: 8.793282}
+      rotation: {x: -0.0137959905, y: 0.15041855, z: 0.080121726, w: 0.9852738}
+      scale: {x: 1.0000024, y: 1.0000012, z: 0.99999714}
+      transformModified: 1
+    - name: GolemLDigit22
+      position: {x: -6.5891113, y: 0, z: -0.0000076293945}
+      rotation: {x: -0.0048507946, y: -0.002637502, z: 0.040639322, w: 0.9991587}
+      scale: {x: 1.0000024, y: 1.0000007, z: 0.99999666}
+      transformModified: 1
+    - name: GolemLDigit23
+      position: {x: -6.589119, y: 0, z: 0.0000038146973}
+      rotation: {x: -0.004846461, y: -0.0037526472, z: 0.057821136, w: 0.9983082}
+      scale: {x: 1.0000025, y: 1.000001, z: 0.9999968}
+      transformModified: 1
+    - name: GolemLDigit31
+      position: {x: -20.754059, y: -1.9667053, z: -1.773613}
+      rotation: {x: -0.02428084, y: 0.15035306, z: 0.08686584, w: 0.98450935}
+      scale: {x: 1.0000025, y: 1.000001, z: 0.9999968}
+      transformModified: 1
+    - name: GolemLDigit32
+      position: {x: -7.053711, y: 0, z: 0}
+      rotation: {x: -0.015088842, y: -0.016698707, z: 0.036107928, w: 0.9990944}
+      scale: {x: 1.000003, y: 1.0000014, z: 0.99999714}
+      transformModified: 1
+    - name: GolemLDigit33
+      position: {x: -6.9427795, y: 0, z: -0.0000076293945}
+      rotation: {x: -0.018954102, y: -0.030608138, z: 0.06945936, w: 0.99693495}
+      scale: {x: 1.0000025, y: 1.0000006, z: 0.999997}
+      transformModified: 1
+    - name: GolemLDigit41
+      position: {x: -16.137802, y: -0.7352295, z: -12.164497}
+      rotation: {x: -0.026921589, y: 0.15213287, z: 0.083782926, w: 0.9844345}
+      scale: {x: 1.0000032, y: 1.0000012, z: 0.9999974}
+      transformModified: 1
+    - name: GolemLDigit42
+      position: {x: -4.8727264, y: 0, z: -0.0000076293945}
+      rotation: {x: -0.020465285, y: -0.029662142, z: 0.02629872, w: 0.9990044}
+      scale: {x: 1.000003, y: 1.0000008, z: 0.9999977}
+      transformModified: 1
+    - name: GolemLDigit43
+      position: {x: -4.755928, y: 0, z: -0.0000038146973}
+      rotation: {x: -0.026790293, y: -0.057325855, z: 0.05240595, w: 0.9966191}
+      scale: {x: 1.0000035, y: 1.0000007, z: 0.99999726}
+      transformModified: 1
+    - name: GolemLUpVectorNode 1
+      position: {x: -0.5534363, y: -75.61165, z: 99.55828}
+      rotation: {x: -0.000000001341564, y: 0.000000023914701, z: 5.945822e-11, w: 1}
+      scale: {x: 1.0000004, y: 1.0000001, z: 0.9999999}
+      transformModified: 1
+    - name: GolemNeck1
+      position: {x: -0.116363525, y: -0.5123749, z: -0.0000009834766}
+      rotation: {x: -0.0000000011341198, y: -0.0000052254095, z: 0.00017255296, w: 1}
+      scale: {x: 0.99999994, y: 1, z: 0.99999994}
+      transformModified: 1
+    - name: GolemNeck2
+      position: {x: -10.207611, y: -0.0000038146973, z: 9.313226e-10}
+      rotation: {x: -0.0000000051212052, y: 0.000000059604204, z: 3.0524537e-16, w: 1}
+      scale: {x: 0.99999976, y: 0.9999999, z: 0.9999997}
+      transformModified: 1
+    - name: GolemHead
+      position: {x: -10.207596, y: 0, z: 9.313226e-10}
+      rotation: {x: -0.0000000011373034, y: 0.0000052120745, z: -0.00017255296, w: 1}
+      scale: {x: 1, y: 1, z: 1.0000001}
+      transformModified: 1
+    - name: GolemRCollarbone
+      position: {x: 2.543396, y: 14.872517, z: -4.412344}
+      rotation: {x: 0.05225864, y: -0.60515016, z: 0.04875148, w: 0.792897}
+      scale: {x: 0.99999976, y: 1.0000001, z: 1.0000006}
+      transformModified: 1
+    - name: GolemRUpperarm
+      position: {x: -41.61712, y: 0, z: 0}
+      rotation: {x: -0.27644297, y: -0.14331846, z: -0.012568093, w: 0.95020056}
+      scale: {x: 0.99999994, y: 1.0000002, z: 1.0000004}
+      transformModified: 1
+    - name: GolemRForearm
+      position: {x: -56.10572, y: 0.000015258789, z: 0.000015258789}
+      rotation: {x: -0.08953142, y: 0.04241887, z: -0.06194513, w: 0.99315035}
+      scale: {x: 1.0000012, y: 0.99999976, z: 0.99999994}
+      transformModified: 1
+    - name: GolemRPalm
+      position: {x: -62.037636, y: 0, z: 0}
+      rotation: {x: 0.847957, y: -0.010029265, z: -0.10481718, w: 0.5195014}
+      scale: {x: 0.99999976, y: 0.99999684, z: 1.0000046}
+      transformModified: 1
+    - name: GolemRDigit11
+      position: {x: -11.050903, y: -0.32913208, z: -14.159859}
+      rotation: {x: -0.21620603, y: -0.20648736, z: 0.004769005, w: 0.9542511}
+      scale: {x: 0.99999523, y: 1.0000025, z: 1.0000026}
+      transformModified: 1
+    - name: GolemRDigit12
+      position: {x: -4.2752914, y: 0, z: 0}
+      rotation: {x: 0.06272282, y: -0.01770587, z: 0.03253923, w: 0.9973433}
+      scale: {x: 0.9999964, y: 1.0000038, z: 1.0000019}
+      transformModified: 1
+    - name: GolemRDigit13
+      position: {x: -6.131096, y: 0, z: 0}
+      rotation: {x: 0.049680956, y: -0.056737494, z: 0.1036807, w: 0.99174744}
+      scale: {x: 0.999995, y: 1.0000037, z: 1.0000013}
+      transformModified: 1
+    - name: GolemRDigit21
+      position: {x: -21.975906, y: -0.57144165, z: -6.1425858}
+      rotation: {x: 0.015390274, y: -0.073687986, z: 0.06649798, w: 0.99494284}
+      scale: {x: 1.0000032, y: 0.99999654, z: 1.0000018}
+      transformModified: 1
+    - name: GolemRDigit22
+      position: {x: -7.007721, y: 0.000015258789, z: 0}
+      rotation: {x: 0.004075967, y: -0.012064121, z: 0.036415465, w: 0.99925566}
+      scale: {x: 0.99999696, y: 1.0000033, z: 0.9999993}
+      transformModified: 1
+    - name: GolemRDigit23
+      position: {x: -6.6768723, y: 0, z: -0.0000076293945}
+      rotation: {x: -0.0012976701, y: -0.029414175, z: 0.101489075, w: 0.99440086}
+      scale: {x: 0.999997, y: 1.000004, z: 0.9999991}
+      transformModified: 1
+    - name: GolemRDigit31
+      position: {x: -23.617111, y: -0.7098541, z: 4.3351364}
+      rotation: {x: 0.02652534, y: -0.072773814, z: 0.061825484, w: 0.9950769}
+      scale: {x: 1.0000001, y: 0.99999624, z: 1.0000044}
+      transformModified: 1
+    - name: GolemRDigit32
+      position: {x: -7.564911, y: 0, z: 0.0000076293945}
+      rotation: {x: 0.022921963, y: 0.006708831, z: 0.036374237, w: 0.9990529}
+      scale: {x: 1.0000002, y: 0.99999624, z: 1.0000042}
+      transformModified: 1
+    - name: GolemRDigit33
+      position: {x: -7.3645782, y: 0, z: 0}
+      rotation: {x: 0.02955372, y: 0.020649763, z: 0.12872082, w: 0.9910253}
+      scale: {x: 1.0000005, y: 0.99999577, z: 1.0000046}
+      transformModified: 1
+    - name: GolemRDigit41
+      position: {x: -19.87407, y: -1.6546173, z: 15.304573}
+      rotation: {x: 0.10332106, y: -0.060549624, z: 0.042772613, w: 0.99188155}
+      scale: {x: 0.99999976, y: 0.99999636, z: 1.0000048}
+      transformModified: 1
+    - name: GolemRDigit42
+      position: {x: -5.0838013, y: 0, z: 0}
+      rotation: {x: 0.07706171, y: 0.024581147, z: 0.028145296, w: 0.9963258}
+      scale: {x: 1.0000002, y: 0.9999963, z: 1.0000052}
+      transformModified: 1
+    - name: GolemRDigit43
+      position: {x: -4.883667, y: 0, z: 0.0000038146973}
+      rotation: {x: 0.0537906, y: 0.06537252, z: 0.106256574, w: 0.9907283}
+      scale: {x: 0.9999999, y: 0.99999595, z: 1.000005}
+      transformModified: 1
+    - name: GolemRUpVectorNode 1
+      position: {x: 2.1618042, y: -64.80757, z: -94.97812}
+      rotation: {x: -0.000000001341564, y: 0.000000023914701, z: 5.945822e-11, w: 1}
+      scale: {x: 1.0000004, y: 1.0000001, z: 0.9999999}
+      transformModified: 1
+    - name: GolemRPlatform
+      position: {x: 0.7435218, y: -0.000000007804454, z: 0.5395395}
+      rotation: {x: 0.49999997, y: -0.49999982, z: -0.5000001, w: 0.50000024}
+      scale: {x: 0.0254, y: 0.0254, z: 0.0254}
+      transformModified: 1
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 3
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

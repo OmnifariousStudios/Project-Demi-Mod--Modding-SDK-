@@ -1,0 +1,838 @@
+fileFormatVersion: 2
+guid: 5e1f8351599f8d94b87c6bdeb1a88636
+timeCreated: 1450870736
+licenseType: Store
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: Female
+    100002: FemaleHead
+    100004: FemaleLCalf
+    100006: FemaleLCollarbone
+    100008: FemaleLDigit11
+    100010: FemaleLDigit21
+    100012: FemaleLDigit3
+    100014: FemaleLeyebrow1
+    100016: FemaleLFoot
+    100018: FemaleLFootDigit11
+    100020: FemaleLForearm
+    100022: FemaleLPalm
+    100024: FemaleLPlatform
+    100026: FemaleLThigh
+    100028: FemaleLUpperarm
+    100030: FemaleNeck1
+    100032: FemaleNeck2
+    100034: FemalePelvis
+    100036: FemaleRCalf
+    100038: FemaleRCollarbone
+    100040: FemaleRDigit11
+    100042: FemaleRDigit21
+    100044: FemaleReyebrow1
+    100046: FemaleRFoot
+    100048: FemaleRFootDigit11
+    100050: FemaleRForearm
+    100052: FemaleRibcage
+    100054: FemaleRPalm
+    100056: FemaleRPlatform
+    100058: FemaleRThigh
+    100060: FemaleRUpperarm
+    100062: FemaleSpine1
+    100064: FemaleSpine2
+    100066: //RootNode
+    100068: FemaleLDigit3 1
+    100070: FemaleLDigit3 2
+    100072: FemaleLDigit3 3
+    100074: FemaleLDigit31
+    100076: FemaleLDigit41
+    100078: FemaleLDigit51
+    100080: FemaleLUpVectorNode
+    100082: FemaleRDigit22
+    100084: FemaleRDigit31
+    100086: FemaleRDigit32
+    100088: FemaleRDigit41
+    100090: FemaleRDigit42
+    100092: FemaleRDigit51
+    100094: FemaleRDigit52
+    100096: FemaleRUpVectorNode
+    400000: Female
+    400002: FemaleHead
+    400004: FemaleLCalf
+    400006: FemaleLCollarbone
+    400008: FemaleLDigit11
+    400010: FemaleLDigit21
+    400012: FemaleLDigit3
+    400014: FemaleLeyebrow1
+    400016: FemaleLFoot
+    400018: FemaleLFootDigit11
+    400020: FemaleLForearm
+    400022: FemaleLPalm
+    400024: FemaleLPlatform
+    400026: FemaleLThigh
+    400028: FemaleLUpperarm
+    400030: FemaleNeck1
+    400032: FemaleNeck2
+    400034: FemalePelvis
+    400036: FemaleRCalf
+    400038: FemaleRCollarbone
+    400040: FemaleRDigit11
+    400042: FemaleRDigit21
+    400044: FemaleReyebrow1
+    400046: FemaleRFoot
+    400048: FemaleRFootDigit11
+    400050: FemaleRForearm
+    400052: FemaleRibcage
+    400054: FemaleRPalm
+    400056: FemaleRPlatform
+    400058: FemaleRThigh
+    400060: FemaleRUpperarm
+    400062: FemaleSpine1
+    400064: FemaleSpine2
+    400066: //RootNode
+    400068: FemaleLDigit3 1
+    400070: FemaleLDigit3 2
+    400072: FemaleLDigit3 3
+    400074: FemaleLDigit31
+    400076: FemaleLDigit41
+    400078: FemaleLDigit51
+    400080: FemaleLUpVectorNode
+    400082: FemaleRDigit22
+    400084: FemaleRDigit31
+    400086: FemaleRDigit32
+    400088: FemaleRDigit41
+    400090: FemaleRDigit42
+    400092: FemaleRDigit51
+    400094: FemaleRDigit52
+    400096: FemaleRUpVectorNode
+    7400000: Take 001
+    9500000: //RootNode
+  materials:
+    importMaterials: 0
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleRotations: 1
+    optimizeGameObjects: 0
+    motionNodeName: <Root Transform>
+    animationImportErrors: '
+
+      Imported file ''golemPunchAnimation'' conversion failed: Required human bone
+      ''Hips'' not found
+
+
+'
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 3
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Take 001
+      takeName: Take 001
+      firstFrame: -1
+      lastFrame: 70
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Female
+        weight: 0
+      - path: FemaleLPlatform
+        weight: 0
+      - path: FemalePelvis
+        weight: 1
+      - path: FemalePelvis/FemaleLThigh
+        weight: 1
+      - path: FemalePelvis/FemaleLThigh/FemaleLCalf
+        weight: 1
+      - path: FemalePelvis/FemaleLThigh/FemaleLCalf/FemaleLFoot
+        weight: 1
+      - path: FemalePelvis/FemaleLThigh/FemaleLCalf/FemaleLFoot/FemaleLFootDigit11
+        weight: 1
+      - path: FemalePelvis/FemaleRThigh
+        weight: 1
+      - path: FemalePelvis/FemaleRThigh/FemaleRCalf
+        weight: 1
+      - path: FemalePelvis/FemaleRThigh/FemaleRCalf/FemaleRFoot
+        weight: 1
+      - path: FemalePelvis/FemaleRThigh/FemaleRCalf/FemaleRFoot/FemaleRFootDigit11
+        weight: 1
+      - path: FemalePelvis/FemaleSpine1
+        weight: 1
+      - path: FemalePelvis/FemaleSpine1/FemaleSpine2
+        weight: 1
+      - path: FemalePelvis/FemaleSpine1/FemaleSpine2/FemaleRibcage
+        weight: 1
+      - path: FemalePelvis/FemaleSpine1/FemaleSpine2/FemaleRibcage/FemaleLCollarbone
+        weight: 1
+      - path: FemalePelvis/FemaleSpine1/FemaleSpine2/FemaleRibcage/FemaleLCollarbone/FemaleLUpperarm
+        weight: 1
+      - path: FemalePelvis/FemaleSpine1/FemaleSpine2/FemaleRibcage/FemaleLCollarbone/FemaleLUpperarm/FemaleLForearm
+        weight: 1
+      - path: FemalePelvis/FemaleSpine1/FemaleSpine2/FemaleRibcage/FemaleLCollarbone/FemaleLUpperarm/FemaleLForearm/FemaleLPalm
+        weight: 1
+      - path: FemalePelvis/FemaleSpine1/FemaleSpine2/FemaleRibcage/FemaleLCollarbone/FemaleLUpperarm/FemaleLForearm/FemaleLPalm/FemaleLDigit11
+        weight: 1
+      - path: FemalePelvis/FemaleSpine1/FemaleSpine2/FemaleRibcage/FemaleLCollarbone/FemaleLUpperarm/FemaleLForearm/FemaleLPalm/FemaleLDigit21
+        weight: 1
+      - path: FemalePelvis/FemaleSpine1/FemaleSpine2/FemaleRibcage/FemaleLCollarbone/FemaleLUpperarm/FemaleLForearm/FemaleLPalm/FemaleLDigit21/FemaleLDigit3
+        weight: 1
+      - path: FemalePelvis/FemaleSpine1/FemaleSpine2/FemaleRibcage/FemaleNeck1
+        weight: 1
+      - path: FemalePelvis/FemaleSpine1/FemaleSpine2/FemaleRibcage/FemaleNeck1/FemaleNeck2
+        weight: 1
+      - path: FemalePelvis/FemaleSpine1/FemaleSpine2/FemaleRibcage/FemaleNeck1/FemaleNeck2/FemaleHead
+        weight: 1
+      - path: FemalePelvis/FemaleSpine1/FemaleSpine2/FemaleRibcage/FemaleNeck1/FemaleNeck2/FemaleHead/FemaleLeyebrow1
+        weight: 1
+      - path: FemalePelvis/FemaleSpine1/FemaleSpine2/FemaleRibcage/FemaleNeck1/FemaleNeck2/FemaleHead/FemaleReyebrow1
+        weight: 0
+      - path: FemalePelvis/FemaleSpine1/FemaleSpine2/FemaleRibcage/FemaleRCollarbone
+        weight: 1
+      - path: FemalePelvis/FemaleSpine1/FemaleSpine2/FemaleRibcage/FemaleRCollarbone/FemaleRUpperarm
+        weight: 1
+      - path: FemalePelvis/FemaleSpine1/FemaleSpine2/FemaleRibcage/FemaleRCollarbone/FemaleRUpperarm/FemaleRForearm
+        weight: 1
+      - path: FemalePelvis/FemaleSpine1/FemaleSpine2/FemaleRibcage/FemaleRCollarbone/FemaleRUpperarm/FemaleRForearm/FemaleRPalm
+        weight: 1
+      - path: FemalePelvis/FemaleSpine1/FemaleSpine2/FemaleRibcage/FemaleRCollarbone/FemaleRUpperarm/FemaleRForearm/FemaleRPalm/FemaleRDigit11
+        weight: 0
+      - path: FemalePelvis/FemaleSpine1/FemaleSpine2/FemaleRibcage/FemaleRCollarbone/FemaleRUpperarm/FemaleRForearm/FemaleRPalm/FemaleRDigit21
+        weight: 0
+      - path: FemaleRPlatform
+        weight: 0
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human:
+    - boneName: FemalePelvis
+      humanName: Hips
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: FemaleLThigh
+      humanName: LeftUpperLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: FemaleRThigh
+      humanName: RightUpperLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: FemaleLCalf
+      humanName: LeftLowerLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: FemaleRCalf
+      humanName: RightLowerLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: FemaleLFoot
+      humanName: LeftFoot
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: FemaleRFoot
+      humanName: RightFoot
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: FemaleSpine1
+      humanName: Spine
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: FemaleSpine2
+      humanName: Chest
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: FemaleNeck1
+      humanName: Neck
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: FemaleHead
+      humanName: Head
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: FemaleLCollarbone
+      humanName: LeftShoulder
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: FemaleRCollarbone
+      humanName: RightShoulder
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: FemaleLUpperarm
+      humanName: LeftUpperArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: FemaleRUpperarm
+      humanName: RightUpperArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: FemaleLForearm
+      humanName: LeftLowerArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: FemaleRForearm
+      humanName: RightLowerArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: FemaleLPalm
+      humanName: LeftHand
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: FemaleRPalm
+      humanName: RightHand
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: FemaleLFootDigit11
+      humanName: LeftToes
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: FemaleRFootDigit11
+      humanName: RightToes
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: FemaleLeyebrow1
+      humanName: Jaw
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: FemaleLDigit11
+      humanName: Left Thumb Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: FemaleLDigit21
+      humanName: Left Index Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: FemaleLDigit3
+      humanName: Left Index Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: FemaleLDigit31
+      humanName: Left Middle Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: FemaleLDigit3 1
+      humanName: Left Middle Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: FemaleLDigit41
+      humanName: Left Ring Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: FemaleLDigit3 2
+      humanName: Left Ring Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: FemaleLDigit51
+      humanName: Left Little Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: FemaleLDigit3 3
+      humanName: Left Little Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: FemaleRDigit11
+      humanName: Right Thumb Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: FemaleRDigit21
+      humanName: Right Index Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: FemaleRDigit22
+      humanName: Right Index Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: FemaleRDigit31
+      humanName: Right Middle Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: FemaleRDigit32
+      humanName: Right Middle Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: FemaleRDigit41
+      humanName: Right Ring Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: FemaleRDigit42
+      humanName: Right Ring Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: FemaleRDigit51
+      humanName: Right Little Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: FemaleRDigit52
+      humanName: Right Little Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    skeleton:
+    - name: golemPunchAnimation(Clone)
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: Female
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+      scale: {x: 0.0254, y: 0.0254, z: 0.0254}
+      transformModified: 1
+    - name: FemaleLPlatform
+      position: {x: -0.14451133, y: 0.0032711665, z: -0.25617912}
+      rotation: {x: 0.5, y: -0.49999988, z: -0.5, w: 0.5000001}
+      scale: {x: 0.0254, y: 0.0254, z: 0.0254}
+      transformModified: 1
+    - name: FemalePelvis
+      position: {x: 0.000000037551818, y: 0.63352406, z: -0.009683937}
+      rotation: {x: 0.5, y: -0.5, z: -0.5, w: 0.5}
+      scale: {x: 0.0254, y: 0.0254, z: 0.0254}
+      transformModified: 1
+    - name: FemaleLThigh
+      position: {x: -0.053195953, y: 0.38106155, z: 3.8156846}
+      rotation: {x: -0.11931129, y: 0.99045396, z: 0.051428124, w: 0.046053767}
+      scale: {x: 1.0000001, y: 0.99999976, z: 0.9999998}
+      transformModified: 1
+    - name: FemaleLCalf
+      position: {x: -12.60379, y: -0.000018119812, z: 0.00005531311}
+      rotation: {x: -0.0038108528, y: 0.0076313615, z: 0.34549978, w: 0.93838006}
+      scale: {x: 1.0000006, y: 1.0000001, z: 1.0000005}
+      transformModified: 1
+    - name: FemaleLFoot
+      position: {x: -13.37419, y: -0.0000019073486, z: 0}
+      rotation: {x: 0.0354529, y: 0.059251156, z: -0.84368616, w: 0.5323777}
+      scale: {x: 1.0000002, y: 1.0000001, z: 1}
+      transformModified: 1
+    - name: FemaleLFootDigit11
+      position: {x: -5.803684, y: -0.000000059604645, z: 0}
+      rotation: {x: -0.0000034006664, y: 0.00024315742, z: -0.00981796, w: 0.9999518}
+      scale: {x: 1.0000001, y: 0.9999995, z: 0.9999995}
+      transformModified: 1
+    - name: FemaleRThigh
+      position: {x: -0.16542244, y: 0.38145256, z: -3.7723505}
+      rotation: {x: -0.12060134, y: 0.99187756, z: -0.026235655, w: -0.030758083}
+      scale: {x: 1.0000005, y: 1.0000001, z: 1.0000001}
+      transformModified: 1
+    - name: FemaleRCalf
+      position: {x: -12.876865, y: -0.00006771088, z: -0.00021839142}
+      rotation: {x: 0.0020474193, y: -0.0017893908, z: 0.34730715, w: 0.93774754}
+      scale: {x: 1.0000002, y: 1.000001, z: 0.9999999}
+      transformModified: 1
+    - name: FemaleRFoot
+      position: {x: -13.215443, y: 0, z: -0.00000047683716}
+      rotation: {x: 0.013997076, y: 0.038586218, z: 0.84600633, w: -0.5315906}
+      scale: {x: 0.9999992, y: 1.0000012, z: 0.9999999}
+      transformModified: 1
+    - name: FemaleRFootDigit11
+      position: {x: -6.0462475, y: 0, z: 0.00000047683716}
+      rotation: {x: -0.00000075545125, y: -0.0000817889, z: -0.009203868, w: 0.9999577}
+      scale: {x: 1.0000002, y: 0.9999995, z: 0.99999976}
+      transformModified: 1
+    - name: FemaleRUpVectorNode
+      position: {x: 4.3949795, y: 34.449577, z: -6.4932737}
+      rotation: {x: -4.9126505e-20, y: -1.0842022e-19, z: -5.326306e-39, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: FemaleSpine1
+      position: {x: -1.417696, y: -1.3284016, z: -0.00000008558672}
+      rotation: {x: 0.000000014803204, y: -0.00000007432641, z: -0.04330639, w: 0.9990618}
+      scale: {x: 1.0000005, y: 1.0000006, z: 1.0000001}
+      transformModified: 1
+    - name: FemaleSpine2
+      position: {x: -8.204309, y: -0.0000019073486, z: -2.2737368e-13}
+      rotation: {x: -0.0000000064669616, y: 0.0000000781015, z: 0.08557914, w: 0.9963314}
+      scale: {x: 1, y: 1.0000001, z: 1}
+      transformModified: 1
+    - name: FemaleRibcage
+      position: {x: -8.186653, y: 0, z: -1.1368684e-13}
+      rotation: {x: -0.0000000051047446, y: -0.000000003254642, z: -0.04409411, w: 0.9990274}
+      scale: {x: 0.9999995, y: 0.99999934, z: 0.9999999}
+      transformModified: 1
+    - name: FemaleLCollarbone
+      position: {x: 0.55680084, y: 3.2555275, z: 0.96584076}
+      rotation: {x: 0.028785147, y: 0.7612791, z: 0.15583542, w: 0.62876153}
+      scale: {x: 1.0000006, y: 0.99999964, z: 0.9999993}
+      transformModified: 1
+    - name: FemaleLUpperarm
+      position: {x: -6.6640024, y: 0.00000047683716, z: 0.0000038146973}
+      rotation: {x: 0.118336946, y: -0.08736783, z: -0.13046771, w: 0.98048025}
+      scale: {x: 1.0000008, y: 0.99999994, z: 0.9999995}
+      transformModified: 1
+    - name: FemaleLForearm
+      position: {x: -9.475334, y: 0, z: -0.0000019073486}
+      rotation: {x: 0.03404637, y: -0.009916963, z: -0.037160844, w: 0.99867994}
+      scale: {x: 1.0000002, y: 1.0000006, z: 1.0000007}
+      transformModified: 1
+    - name: FemaleLPalm
+      position: {x: -8.299475, y: 0, z: -0.0000009536743}
+      rotation: {x: -0.72096556, y: -0.07140444, z: 0.092657655, w: 0.6830261}
+      scale: {x: 0.9999982, y: 1.0000018, z: 1.0000008}
+      transformModified: 1
+    - name: FemaleLDigit11
+      position: {x: -1.079998, y: 0, z: 1.5600033}
+      rotation: {x: 0.77917767, y: 0.35604027, z: -0.16023715, w: 0.49034843}
+      scale: {x: 0.9999988, y: 1.0000046, z: 0.999998}
+      transformModified: 1
+    - name: FemaleLDigit21
+      position: {x: -3.5999928, y: 0.0000009536743, z: 1.5600014}
+      rotation: {x: 0.000000043772065, y: 0.000000018626487, z: 0.000000052154153,
+        w: 1}
+      scale: {x: 0.9999983, y: 1.0000021, z: 1.0000006}
+      transformModified: 1
+    - name: FemaleLDigit3
+      position: {x: -1.6074829, y: -0.0000009536743, z: 0}
+      rotation: {x: 0.000000058673045, y: -0.000000089407266, z: -0.000000052154235,
+        w: 1}
+      scale: {x: 0.99999666, y: 1.0000046, z: 1.0000017}
+      transformModified: 1
+    - name: FemaleLDigit31
+      position: {x: -3.5999947, y: 0, z: 0.52000046}
+      rotation: {x: -0.0000000023283007, y: -0.000000003725294, z: -0.000000007450588,
+        w: 1}
+      scale: {x: 0.999999, y: 1.0000025, z: 1.0000014}
+      transformModified: 1
+    - name: FemaleLDigit3 1
+      position: {x: -1.6082649, y: -0.0000009536743, z: 0}
+      rotation: {x: 0.0000000046565907, y: -0.0000000037252983, z: 1.734719e-17, w: 1}
+      scale: {x: 0.99999785, y: 1.0000048, z: 1.0000026}
+      transformModified: 1
+    - name: FemaleLDigit41
+      position: {x: -3.5999937, y: 0, z: -0.52000046}
+      rotation: {x: -0.0000000023283007, y: -0.000000003725294, z: -0.000000007450588,
+        w: 1}
+      scale: {x: 0.999999, y: 1.0000025, z: 1.0000014}
+      transformModified: 1
+    - name: FemaleLDigit3 2
+      position: {x: -1.6082649, y: 0, z: 0}
+      rotation: {x: 0.0000000046565907, y: -0.0000000037252983, z: 1.734719e-17, w: 1}
+      scale: {x: 0.99999785, y: 1.0000048, z: 1.0000026}
+      transformModified: 1
+    - name: FemaleLDigit51
+      position: {x: -3.5999956, y: 0, z: -1.5600033}
+      rotation: {x: -0.0000000023283007, y: -0.000000003725294, z: -0.000000007450588,
+        w: 1}
+      scale: {x: 0.999999, y: 1.0000025, z: 1.0000014}
+      transformModified: 1
+    - name: FemaleLDigit3 3
+      position: {x: -1.6082649, y: 0, z: 0}
+      rotation: {x: 0.0000000046565907, y: -0.0000000037252983, z: 1.734719e-17, w: 1}
+      scale: {x: 0.99999785, y: 1.0000048, z: 1.0000026}
+      transformModified: 1
+    - name: FemaleNeck1
+      position: {x: -0.16297531, y: -1.6305532, z: 0.000000013879344}
+      rotation: {x: -3.5470557e-11, y: -0.000000021574753, z: -0.14047186, w: 0.9900847}
+      scale: {x: 0.99999994, y: 1, z: 0.99999994}
+      transformModified: 1
+    - name: FemaleNeck2
+      position: {x: -4.899891, y: 0, z: 1.1368684e-13}
+      rotation: {x: -5.7476763e-11, y: 0.000000023609243, z: 0.15641716, w: 0.9876911}
+      scale: {x: 0.9999996, y: 0.99999994, z: 0.9999998}
+      transformModified: 1
+    - name: FemaleHead
+      position: {x: -4.8467712, y: 0, z: 0}
+      rotation: {x: 6.134271e-11, y: -0.0000000019808941, z: -0.016123451, w: 0.99987006}
+      scale: {x: 0.99999994, y: 1, z: 0.9999999}
+      transformModified: 1
+    - name: FemaleLeyebrow1
+      position: {x: -11.714119, y: 16.750769, z: 5.1496305}
+      rotation: {x: -5.8208355e-11, y: -1.388457e-17, z: 1.1641538e-10, w: 1}
+      scale: {x: 0.9999995, y: 1.0000001, z: 0.99999964}
+      transformModified: 1
+    - name: FemaleReyebrow1
+      position: {x: -11.918156, y: 16.713732, z: -5.664042}
+      rotation: {x: -5.8208355e-11, y: -1.388457e-17, z: 1.1641538e-10, w: 1}
+      scale: {x: 0.9999995, y: 1.0000001, z: 0.99999964}
+      transformModified: 1
+    - name: FemaleRCollarbone
+      position: {x: 0.55680084, y: 3.2555285, z: -0.9658428}
+      rotation: {x: -0.04413706, y: -0.74210656, z: 0.17185235, w: 0.6463719}
+      scale: {x: 1.0000008, y: 0.9999997, z: 1.0000002}
+      transformModified: 1
+    - name: FemaleRUpperarm
+      position: {x: -6.069109, y: 0, z: -0.0000038146973}
+      rotation: {x: -0.25111935, y: 0.08285852, z: -0.13600418, w: 0.9547651}
+      scale: {x: 1.000001, y: 0.9999992, z: 0.99999905}
+      transformModified: 1
+    - name: FemaleRForearm
+      position: {x: -9.895729, y: -0.0000019073486, z: 0}
+      rotation: {x: -0.06967008, y: -0.0045161564, z: -0.032475736, w: 0.9970311}
+      scale: {x: 1.0000015, y: 1.0000002, z: 0.99999964}
+      transformModified: 1
+    - name: FemaleRPalm
+      position: {x: -9.398172, y: 0, z: -0.00000047683716}
+      rotation: {x: 0.73499423, y: 0.098754846, z: 0.004533786, w: 0.6708282}
+      scale: {x: 1.0000023, y: 0.9999986, z: 0.9999991}
+      transformModified: 1
+    - name: FemaleRDigit11
+      position: {x: -1.0800018, y: 0, z: -1.5599985}
+      rotation: {x: -0.664157, y: -0.22695768, z: -0.15224113, w: 0.69585085}
+      scale: {x: 1.000002, y: 1.0000007, z: 1.0000004}
+      transformModified: 1
+    - name: FemaleRDigit21
+      position: {x: -3.6027126, y: -0.0035209656, z: -1.6931543}
+      rotation: {x: 0.005834744, y: -0.02045972, z: 0.07428742, w: 0.99700993}
+      scale: {x: 1.0000037, y: 0.9999985, z: 1.0000004}
+      transformModified: 1
+    - name: FemaleRDigit22
+      position: {x: -1.0718765, y: 0, z: -0.0000009536743}
+      rotation: {x: -0.000000018117193, y: 0.000000003259603, z: 5.905486e-17, w: 1}
+      scale: {x: 1.000008, y: 0.9999968, z: 0.9999993}
+      transformModified: 1
+    - name: FemaleRDigit31
+      position: {x: -3.596693, y: 0.004315853, z: -0.35675907}
+      rotation: {x: 0.00000000755246, y: 0.0000000026775386, z: -2.0222003e-17, w: 1}
+      scale: {x: 1.0000051, y: 0.9999979, z: 0.999999}
+      transformModified: 1
+    - name: FemaleRDigit32
+      position: {x: -1.0718775, y: 0, z: -0.0000009536743}
+      rotation: {x: 0.000000008323732, y: -4.6565662e-10, z: 3.876001e-18, w: 1}
+      scale: {x: 1.00001, y: 0.99999565, z: 0.9999978}
+      transformModified: 1
+    - name: FemaleRDigit41
+      position: {x: -3.5952215, y: 0.0062298775, z: 0.7556181}
+      rotation: {x: 0.00000000755246, y: 0.0000000026775386, z: -2.0222003e-17, w: 1}
+      scale: {x: 1.0000051, y: 0.9999979, z: 0.999999}
+      transformModified: 1
+    - name: FemaleRDigit42
+      position: {x: -1.0718765, y: 0, z: 0.0000009536743}
+      rotation: {x: 0.000000008323732, y: -4.6565662e-10, z: 3.876001e-18, w: 1}
+      scale: {x: 1.00001, y: 0.99999565, z: 0.9999978}
+      transformModified: 1
+    - name: FemaleRDigit51
+      position: {x: -3.5922718, y: 0.010069847, z: 1.940876}
+      rotation: {x: 0.00000000755246, y: 0.0000000026775386, z: -2.0222003e-17, w: 1}
+      scale: {x: 1.0000051, y: 0.9999979, z: 0.999999}
+      transformModified: 1
+    - name: FemaleRDigit52
+      position: {x: -1.0718737, y: 0.00000047683716, z: 0}
+      rotation: {x: 0.000000008323732, y: -4.6565662e-10, z: 3.876001e-18, w: 1}
+      scale: {x: 1.00001, y: 0.99999565, z: 0.9999978}
+      transformModified: 1
+    - name: FemaleRPlatform
+      position: {x: 0.12332091, y: 0.0027494445, z: -0.28706193}
+      rotation: {x: 0.5, y: -0.49999988, z: -0.5, w: 0.5000001}
+      scale: {x: 0.0254, y: 0.0254, z: 0.0254}
+      transformModified: 1
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 3
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

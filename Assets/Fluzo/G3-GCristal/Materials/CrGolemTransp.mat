@@ -1,0 +1,120 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: CrGolemTransp
+  m_Shader: {fileID: 4800000, guid: 4079c1137c960f141a1493a4582c5201, type: 3}
+  m_ShaderKeywords: _NORMALMAP
+  m_LightmapFlags: 0
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: 3000
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _BumpMap:
+        m_Texture: {fileID: 2800000, guid: c81e33f4ceafd4872b48acf57b650fa8, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DetailAlbedoMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DetailMask:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DetailNormalMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _EmissionMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Emissive:
+        m_Texture: {fileID: 2800000, guid: fb7ea81a945c646048320b3c3de502c5, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Emmisive:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 2800000, guid: fb7ea81a945c646048320b3c3de502c5, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MetallicGlossMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _OcclusionMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Opacity:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _ParallaxMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Texttr:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _node_4613:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _node_6481:
+        m_Texture: {fileID: 2800000, guid: ff38cf0520be04e48b30bebd9c1ff3cd, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - _BumpScale: 1
+    - _Cutoff: 0.5
+    - _DetailNormalMapScale: 1
+    - _DstBlend: 0
+    - _EmissiveV: -0.02
+    - _Fresnel: 5
+    - _FresnelEmissive: 0.32
+    - _Gloss: 0.715
+    - _Glossiness: 0.5
+    - _Metallic: 0.451
+    - _Mode: 0
+    - _OcclusionStrength: 1
+    - _Parallax: 0.02
+    - _PowerNormal: 0.5
+    - _Power_Normal: 0
+    - _Refract: 1
+    - _RefractFalloff: 0.14
+    - _SrcBlend: 1
+    - _Transp: 0.56
+    - _UVSec: 0
+    - _Value2: 0.54
+    - _ZWrite: 1
+    - _disp: 0
+    - _node_2375: -0.17
+    - _node_3264: 0.5
+    - _node_3602: 0
+    - _node_421: 0
+    - _node_5106: 1.73
+    - _node_5156: 0
+    - _node_8445: -10.02
+    - _normal: 1
+    - _smoothN: 0
+    m_Colors:
+    - _Color: {r: 0.8857591, g: 0.9485294, b: 0.8939842, a: 1}
+    - _Ecolor: {r: 0.30882353, g: 0.30882353, b: 0.30882353, a: 1}
+    - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
+    - _node_6851: {r: 0.9117647, g: 0.9117647, b: 0.9117647, a: 1}
+  m_BuildTextureStacks: []
