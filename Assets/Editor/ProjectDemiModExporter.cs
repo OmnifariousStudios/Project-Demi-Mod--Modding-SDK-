@@ -38,6 +38,8 @@ public class ProjectDemiModExporter : EditorWindow
     
     public BuildTarget buildTarget = BuildTarget.StandaloneWindows64;
     
+    float vSbarValue;
+    Vector2 scrollPosition;
     
     [MenuItem("Project Demigod/Mod Exporter")]
     public static void ShowMapWindow() 
@@ -58,6 +60,9 @@ public class ProjectDemiModExporter : EditorWindow
     
     private void OnGUI() 
     {
+        scrollPosition = GUILayout.BeginScrollView(
+            scrollPosition);
+        
         EditorGUIUtility.labelWidth = 80;
         GUILayout.Label("Project Demigod Mod Exporter", EditorStyles.largeLabel);
         GUILayout.Space(10);
@@ -142,7 +147,7 @@ public class ProjectDemiModExporter : EditorWindow
                 GUI.color = Color.white;
             }
             
-            if(GUILayout.Button("Setup Folder Structure", GUILayout.Height(40)))
+            if(GUILayout.Button("Setup Folder Structure", GUILayout.Height(20)))
             {
                 CheckForAvatarModPath();
             }
@@ -159,7 +164,7 @@ public class ProjectDemiModExporter : EditorWindow
             {
                 GUI.color = Color.white;
             }
-            if (GUILayout.Button("Setup Avatar", GUILayout.Height(40)))
+            if (GUILayout.Button("Setup Avatar", GUILayout.Height(20)))
             {
                 Debug.Log("Checking model");
                 
@@ -267,13 +272,13 @@ public class ProjectDemiModExporter : EditorWindow
                 GUI.color = Color.white;
             }
             
-            if (GUILayout.Button("Create Custom Material Settings", GUILayout.Height(40)))
+            if (GUILayout.Button("Create Custom Material Settings", GUILayout.Height(20)))
             {
                 GenerateCustomMaterialSettings();
             }
 
             GUI.color = Color.red;
-            if (GUILayout.Button("Clear Custom Material Settings", GUILayout.Height(40)))
+            if (GUILayout.Button("Clear Custom Material Settings", GUILayout.Height(20)))
             {
                 ClearCustomMaterialSettings();
             }
@@ -299,7 +304,7 @@ public class ProjectDemiModExporter : EditorWindow
 
             if (Application.isPlaying == false)
             {
-                if (GUILayout.Button("Create Hand Poses", GUILayout.Height(40)))
+                if (GUILayout.Button("Create Hand Poses", GUILayout.Height(20)))
                 {
                     EditorApplication.EnterPlaymode();
                 }
@@ -317,7 +322,7 @@ public class ProjectDemiModExporter : EditorWindow
         
         using (new EditorGUI.DisabledScope(!canBuild)) 
         {
-            if (GUILayout.Button("Build Windows", GUILayout.Height(40)))
+            if (GUILayout.Button("Build Windows", GUILayout.Height(20)))
             {
                 DisableDebugRenderers();
                 
@@ -338,7 +343,7 @@ public class ProjectDemiModExporter : EditorWindow
                 RetrievePrefabInstanceFromScene();
             }
 
-            if (GUILayout.Button("Build Android", GUILayout.Height(40)))
+            if (GUILayout.Button("Build Android", GUILayout.Height(20)))
             {
                 DisableDebugRenderers();
                 
@@ -368,7 +373,7 @@ public class ProjectDemiModExporter : EditorWindow
         using(new EditorGUI.DisabledScope(avatarModel == null))
         {
             EditorGUILayout.HelpBox(" Use this button to Finish Setup for current Avatar AFTER building the Addressable. Adds the Hand Pose JSON to the folder before compression.", MessageType.Info);
-            if (GUILayout.Button("Finish Setup", GUILayout.Height(40)))
+            if (GUILayout.Button("Finish Setup", GUILayout.Height(20)))
             {
                 // Add json file to the Addressable folder we've created.
                 
@@ -432,12 +437,12 @@ public class ProjectDemiModExporter : EditorWindow
         }
         
         
-        GUILayout.Space(25);
+        GUILayout.Space(20);
         DrawUILine(Color.blue);
-        GUILayout.Space(25);
+        GUILayout.Space(20);
         
         
-        if(GUILayout.Button("Save Avatar Prefab", GUILayout.Height(40)))
+        if(GUILayout.Button("Save Avatar Prefab", GUILayout.Height(20)))
         {
             if (avatarModel)
             {
@@ -474,6 +479,9 @@ public class ProjectDemiModExporter : EditorWindow
         {
             ResetButtonCompletionStatus();
         }
+        
+        
+        GUILayout.EndScrollView();
     }
 
     private void ResetButtonCompletionStatus()
