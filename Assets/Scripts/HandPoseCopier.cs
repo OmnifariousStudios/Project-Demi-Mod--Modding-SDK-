@@ -508,7 +508,7 @@ public class HandPoseCopier : MonoBehaviour
         
         if(completedAllPoses == false)
         {
-            return;
+            //return;
         }
 
         if (PoseCompletedChecklist[handPoseAnimations.Count - 1])
