@@ -83,7 +83,8 @@ public class ProjectDemiModExporter : EditorWindow
         avatarModel = EditorGUILayout.ObjectField("Avatar Model", avatarModel, typeof(GameObject), true) as GameObject;
 
 
-        if (buildTarget == BuildTarget.StandaloneWindows64)
+        
+        if (EditorUserBuildSettings.selectedStandaloneTarget == BuildTarget.StandaloneWindows64)
         {
             EditorGUILayout.HelpBox("Current Target: Windows", MessageType.Info);
             if(GUILayout.Button("Switch to Android"))
@@ -93,7 +94,7 @@ public class ProjectDemiModExporter : EditorWindow
                 EditorUserBuildSettings.selectedStandaloneTarget = BuildTarget.Android;
             }
         }
-        else if(buildTarget == BuildTarget.Android)
+        else if(EditorUserBuildSettings.selectedStandaloneTarget == BuildTarget.Android)
         {
             EditorGUILayout.HelpBox("Current Target: Android", MessageType.Info);
             if(GUILayout.Button("Switch to Windows"))
@@ -138,20 +139,6 @@ public class ProjectDemiModExporter : EditorWindow
 
         using (new EditorGUI.DisabledScope(avatarModel == null))
         {
-            if (FolderSetupComplete)
-            {
-                GUI.color = Color.green;
-            }
-            else
-            {
-                GUI.color = Color.white;
-            }
-            
-            if(GUILayout.Button("Setup Folder Structure", GUILayout.Height(20)))
-            {
-                CheckForAvatarModPath();
-            }
-            
             GUI.color = Color.white;
             
             EditorGUILayout.HelpBox("Use this button first to get all references and add necessary scripts.", MessageType.Info);
@@ -164,6 +151,7 @@ public class ProjectDemiModExporter : EditorWindow
             {
                 GUI.color = Color.white;
             }
+            
             if (GUILayout.Button("Setup Avatar", GUILayout.Height(20)))
             {
                 Debug.Log("Checking model");
@@ -252,6 +240,23 @@ public class ProjectDemiModExporter : EditorWindow
                 
                 AvatarSetupComplete = true;
             }
+            
+            if (FolderSetupComplete)
+            {
+                GUI.color = Color.green;
+            }
+            else
+            {
+                GUI.color = Color.white;
+            }
+            
+            if(GUILayout.Button("Setup Folder Structure", GUILayout.Height(20)))
+            {
+                CheckForAvatarModPath();
+            }
+            
+            GUI.color = Color.white;
+            
 
             
             
@@ -511,7 +516,7 @@ public class ProjectDemiModExporter : EditorWindow
     [ContextMenu("Check For Avatar Mod Path")]
     private string CheckForAvatarModPath()
     {
-        if (!playerAvatarScript && avatarModel)
+        if (avatarModel)
         {
             playerAvatarScript = avatarModel.GetComponentInChildren<PlayerAvatar>();
         }
@@ -1199,7 +1204,7 @@ public class ProjectDemiModExporter : EditorWindow
 
     private void EnableDebugRenderers()
     {
-        if (!playerAvatarScript && avatarModel)
+        if (avatarModel)
             playerAvatarScript = avatarModel.GetComponent<PlayerAvatar>();
         
         if(playerAvatarScript.fingerTips != null)
@@ -1241,7 +1246,7 @@ public class ProjectDemiModExporter : EditorWindow
 
     private void DisableDebugRenderers()
     {
-        if (!playerAvatarScript && avatarModel)
+        if (avatarModel)
             playerAvatarScript = avatarModel.GetComponent<PlayerAvatar>();
         
         if(playerAvatarScript.fingerTips != null)
