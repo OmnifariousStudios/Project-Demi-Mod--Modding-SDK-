@@ -37,18 +37,27 @@ public class HandPoseCopier : MonoBehaviour
     public List<GameObject> leftHandWeaponShapes;
     public int currentWeaponShapeIndex = 0;
     
+    public Dictionary<int, int> PoseToShapeDictionary = new Dictionary<int, int>();
+
     public List<HVRHandPose> handPoses;
     
     public HVRHandPose newPose;
     
     public string jsonFile;
 
+    // IK Targeting Rotation
     public Quaternion rightHandIKRotation;
     public Quaternion leftHandIKRotation;
     
     public Vector3 rightHandIKRotationEuler;
     public Vector3 leftHandIKRotationEuler;
 
+    // Weapon Pose Offsets
+    public Vector3 leftHandPositionOffset;
+    public Vector3 leftHandRotationOffset;
+    public Vector3 rightHandPositionOffset;
+    public Vector3 rightHandRotationOffset;
+    
     public int currentPoseIndex = 0;
     public HVRHandPose currentPose;
 
@@ -57,7 +66,22 @@ public class HandPoseCopier : MonoBehaviour
     public Text currentPoseReadout;
     public Text currentWeaponShapeReadout;
     public Text poseCompletionReadout;
-    
+
+    private void Awake()
+    {
+        // Sphere Grip Pose -> FireballShape
+        PoseToShapeDictionary.Add(3, 0);
+        
+        // Hold Object Pose -> SwordShape
+        PoseToShapeDictionary.Add(4, 1);
+        
+        // Forward Sword Pose -> Tech Katana
+        PoseToShapeDictionary.Add(5, 5);
+        
+        // Pistol Pose -> PistolShape
+        PoseToShapeDictionary.Add(8, 8);
+    }
+
     private void Start()
     {
         for (int i = 0; i < handPoseAnimations.Count; i++)
@@ -351,8 +375,14 @@ public class HandPoseCopier : MonoBehaviour
         Transform leftHandGrabPoint = leftHandWeaponShapes[currentWeaponShapeIndex].transform.Find("Grab Point");
         Transform rightHandGrabPoint = rightHandWeaponShapes[currentWeaponShapeIndex].transform.Find("Grab Point");
 
-        Vector3 leftHandPositionOffset = leftHandGrabPoint.InverseTransformPoint(playerAvatarScript.leftHand.position);
-        Vector3 rightHandPositionOffset = rightHandGrabPoint.InverseTransformPoint(playerAvatarScript.rightHand.position);
+        Debug.Log("Getting Grab Point from Weapon Shape: " + leftHandGrabPoint.parent.name);
+        
+        //Vector3 leftHandPositionOffset = leftHandGrabPoint.InverseTransformPoint(playerAvatarScript.leftHand.position);
+        //Vector3 rightHandPositionOffset = rightHandGrabPoint.InverseTransformPoint(playerAvatarScript.rightHand.position);
+        
+        leftHandPositionOffset = leftHandGrabPoint.InverseTransformPointUnscaled(playerAvatarScript.leftHand.position);
+        rightHandPositionOffset = rightHandGrabPoint.InverseTransformPointUnscaled(playerAvatarScript.rightHand.position);
+        
         
         if(debugHandPoseCopier)
         {
@@ -360,13 +390,19 @@ public class HandPoseCopier : MonoBehaviour
             Debug.Log("Right Hand Position Offset: " + rightHandPositionOffset);
         }
         
-        Quaternion leftHandRotationOffset = Quaternion.Inverse(leftHandGrabPoint.rotation) * playerAvatarScript.leftHand.rotation;
-        Quaternion rightHandRotationOffset = Quaternion.Inverse(rightHandGrabPoint.rotation) * playerAvatarScript.rightHand.rotation;
+        //Quaternion leftHandRotationOffset = Quaternion.Inverse(leftHandGrabPoint.rotation) * playerAvatarScript.leftHand.rotation;
+        //Quaternion rightHandRotationOffset = Quaternion.Inverse(rightHandGrabPoint.rotation) * playerAvatarScript.rightHand.rotation;
+        
+        Quaternion leftHandRotationOffset = Quaternion.Inverse(playerAvatarScript.leftHand.rotation) * leftHandGrabPoint.rotation;
+        Quaternion rightHandRotationOffset = Quaternion.Inverse(playerAvatarScript.rightHand.rotation) * rightHandGrabPoint.rotation;
         
         if(debugHandPoseCopier)
         {
             Debug.Log("Left Hand Rotation Offset: " + leftHandRotationOffset.eulerAngles);
             Debug.Log("Right Hand Rotation Offset: " + rightHandRotationOffset.eulerAngles);
+            
+            //Debug.Log("Left Hand Rotation Offset 2: " + leftHandRotationOffset2.eulerAngles);
+            //Debug.Log("Right Hand Rotation Offset 2: " + rightHandRotationOffset2.eulerAngles);
         }
         
         handPose.LeftHand.Position = leftHandPositionOffset;
@@ -396,10 +432,13 @@ public class HandPoseCopier : MonoBehaviour
         if(Application.isPlaying == false)
             return;
         
+        DisableCurrentWeaponShape(currentPoseIndex);
         currentPoseIndex++;
 
         if(currentPoseIndex > handPoseAnimations.Count - 1)
             currentPoseIndex = 0;
+        
+        EnableSpecificWeaponShape(currentPoseIndex);
         
         currentClipToRecord = handPoseAnimations[currentPoseIndex];
             
@@ -411,6 +450,7 @@ public class HandPoseCopier : MonoBehaviour
         
         if (currentPoseReadout)
             currentPoseReadout.text = "Current Pose: " + currentClipToRecord.name;
+        
     }
     
     public void PreviousPose()
@@ -418,10 +458,14 @@ public class HandPoseCopier : MonoBehaviour
         if(Application.isPlaying == false)
             return;
         
-        currentPoseIndex--;
         
+        DisableCurrentWeaponShape();
+        currentPoseIndex--;
+
         if(currentPoseIndex < 0)
             currentPoseIndex = handPoseAnimations.Count - 1;
+        
+        EnableSpecificWeaponShape(currentPoseIndex);
         
         currentClipToRecord = handPoseAnimations[currentPoseIndex];
             
@@ -435,6 +479,29 @@ public class HandPoseCopier : MonoBehaviour
             currentPoseReadout.text = "Current Pose: " + currentClipToRecord.name;
     }
 
+
+    public void EnableSpecificWeaponShape(int shapeIndex)
+    {
+        if (PoseToShapeDictionary.ContainsKey(shapeIndex))
+        {
+            leftHandWeaponShapes[PoseToShapeDictionary[shapeIndex]].SetActive(true);
+            rightHandWeaponShapes[PoseToShapeDictionary[shapeIndex]].SetActive(true);
+            
+            currentWeaponShapeIndex = PoseToShapeDictionary[shapeIndex];
+        }
+    }
+    
+    public void DisableSpecificWeaponShape(int shapeIndex)
+    {
+        if (PoseToShapeDictionary.ContainsKey(shapeIndex))
+        {
+            leftHandWeaponShapes[PoseToShapeDictionary[shapeIndex]].SetActive(false);
+            rightHandWeaponShapes[PoseToShapeDictionary[shapeIndex]].SetActive(false);
+            
+            currentWeaponShapeIndex = PoseToShapeDictionary[shapeIndex];
+        }
+    }
+    
     
     public void EnableCurrentWeaponShape()
     {
@@ -454,8 +521,13 @@ public class HandPoseCopier : MonoBehaviour
         }
     }
     
-    public void DisableCurrentWeaponShape()
+    public void DisableCurrentWeaponShape(int shapeIndex = -1)
     {
+        if (shapeIndex != -1)
+        {
+            DisableSpecificWeaponShape(shapeIndex);
+        }
+        
         if (leftHandWeaponShapes[currentWeaponShapeIndex])
         {
             leftHandWeaponShapes[currentWeaponShapeIndex].SetActive(false);

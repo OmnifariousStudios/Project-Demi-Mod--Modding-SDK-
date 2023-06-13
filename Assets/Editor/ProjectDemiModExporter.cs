@@ -1199,6 +1199,9 @@ public class ProjectDemiModExporter : EditorWindow
 
     private void EnableDebugRenderers()
     {
+        if (!playerAvatarScript && avatarModel)
+            playerAvatarScript = avatarModel.GetComponent<PlayerAvatar>();
+        
         if(playerAvatarScript.fingerTips != null)
         {
             foreach (var tip in playerAvatarScript.fingerTips)
@@ -1238,6 +1241,9 @@ public class ProjectDemiModExporter : EditorWindow
 
     private void DisableDebugRenderers()
     {
+        if (!playerAvatarScript && avatarModel)
+            playerAvatarScript = avatarModel.GetComponent<PlayerAvatar>();
+        
         if(playerAvatarScript.fingerTips != null)
         {
             foreach (var tip in playerAvatarScript.fingerTips)
@@ -1344,7 +1350,7 @@ public class ProjectDemiModExporter : EditorWindow
     {
         if (Directory.Exists(exportPath))
         {
-            Debug.Log("Deleting old export folder at " + exportPath);
+            //Debug.Log("Deleting old export folder at " + exportPath);
             //DeleteFolder(exportPath);
         }
 
