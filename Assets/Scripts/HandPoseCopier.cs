@@ -75,11 +75,29 @@ public class HandPoseCopier : MonoBehaviour
         // Hold Object Pose -> SwordShape
         PoseToShapeDictionary.Add(4, 1);
         
-        // Forward Sword Pose -> Tech Katana
-        PoseToShapeDictionary.Add(5, 5);
+        // Hold Object Pose -> Shield
+        PoseToShapeDictionary.Add(5, 2);
         
-        // Pistol Pose -> PistolShape
-        PoseToShapeDictionary.Add(8, 8);
+        // Hold Object Pose -> Kunai
+        PoseToShapeDictionary.Add(6, 3);
+        
+        // Hold Object Pose -> Spear
+        PoseToShapeDictionary.Add(7, 4);
+        
+        // Katana
+        PoseToShapeDictionary.Add(8, 5);
+        
+        // Hold Object Pose -> Warhammer
+        PoseToShapeDictionary.Add(9, 6);
+        
+        // Hold Object Pose -> Baton
+        PoseToShapeDictionary.Add(10, 7);
+        
+        // Pistol Pose -> Pistol
+        PoseToShapeDictionary.Add(11, 8);
+        
+        // Pistol Secondary
+        PoseToShapeDictionary.Add(12, 1);
     }
 
     private void Start()
@@ -376,10 +394,7 @@ public class HandPoseCopier : MonoBehaviour
         Transform rightHandGrabPoint = rightHandWeaponShapes[currentWeaponShapeIndex].transform.Find("Grab Point");
 
         Debug.Log("Getting Grab Point from Weapon Shape: " + leftHandGrabPoint.parent.name);
-        
-        //Vector3 leftHandPositionOffset = leftHandGrabPoint.InverseTransformPoint(playerAvatarScript.leftHand.position);
-        //Vector3 rightHandPositionOffset = rightHandGrabPoint.InverseTransformPoint(playerAvatarScript.rightHand.position);
-        
+
         leftHandPositionOffset = leftHandGrabPoint.InverseTransformPointUnscaled(playerAvatarScript.leftHand.position);
         rightHandPositionOffset = rightHandGrabPoint.InverseTransformPointUnscaled(playerAvatarScript.rightHand.position);
         
@@ -389,32 +404,16 @@ public class HandPoseCopier : MonoBehaviour
             Debug.Log("Left Hand Position Offset: " + leftHandPositionOffset.x + ", " + leftHandPositionOffset.y + ", " + leftHandPositionOffset.z);
             Debug.Log("Right Hand Position Offset: " + rightHandPositionOffset.x + ", " + rightHandPositionOffset.y + ", " + rightHandPositionOffset.z);
         }
-        
-        //Quaternion leftHandRotationOffset = Quaternion.Inverse(leftHandGrabPoint.rotation) * playerAvatarScript.leftHand.rotation;
-        //Quaternion rightHandRotationOffset = Quaternion.Inverse(rightHandGrabPoint.rotation) * playerAvatarScript.rightHand.rotation;
+
         
         Quaternion leftHandRotationOffset = Quaternion.Inverse(leftHandGrabPoint.rotation) * playerAvatarScript.leftHand.rotation;
         Quaternion rightHandRotationOffset = Quaternion.Inverse(rightHandGrabPoint.rotation) * playerAvatarScript.rightHand.rotation;
-        
-        //Quaternion test1 = Quaternion.Inverse(leftHandGrabPoint.rotation) * playerAvatarScript.leftHand.rotation;
-        //Quaternion test2 = Quaternion.Inverse(rightHandGrabPoint.rotation) * playerAvatarScript.rightHand.rotation;
 
-        //Quaternion test3 = Quaternion.Inverse(test1);
-        //Quaternion test4 = Quaternion.Inverse(test2);
         
         if(debugHandPoseCopier)
         {
             Debug.Log("Left Hand Rotation Offset: " + leftHandRotationOffset.eulerAngles);
             Debug.Log("Right Hand Rotation Offset: " + rightHandRotationOffset.eulerAngles);
-            
-            //Debug.Log("Left Hand Rotation Offset 1: " + test1.eulerAngles);
-            //Debug.Log("Right Hand Rotation Offset 1: " + test2.eulerAngles);
-            
-            //Debug.Log("Left Hand Rotation Offset 2: " + test3.eulerAngles);
-            //Debug.Log("Right Hand Rotation Offset 2: " + test4.eulerAngles);
-            
-            //Debug.Log("Left Hand Rotation Offset 2: " + leftHandRotationOffset2.eulerAngles);
-            //Debug.Log("Right Hand Rotation Offset 2: " + rightHandRotationOffset2.eulerAngles);
         }
         
         handPose.LeftHand.Position = leftHandPositionOffset;
