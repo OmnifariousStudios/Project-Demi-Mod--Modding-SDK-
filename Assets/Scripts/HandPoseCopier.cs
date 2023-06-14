@@ -386,20 +386,32 @@ public class HandPoseCopier : MonoBehaviour
         
         if(debugHandPoseCopier)
         {
-            Debug.Log("Left Hand Position Offset: " + leftHandPositionOffset);
-            Debug.Log("Right Hand Position Offset: " + rightHandPositionOffset);
+            Debug.Log("Left Hand Position Offset: " + leftHandPositionOffset.x + ", " + leftHandPositionOffset.y + ", " + leftHandPositionOffset.z);
+            Debug.Log("Right Hand Position Offset: " + rightHandPositionOffset.x + ", " + rightHandPositionOffset.y + ", " + rightHandPositionOffset.z);
         }
         
         //Quaternion leftHandRotationOffset = Quaternion.Inverse(leftHandGrabPoint.rotation) * playerAvatarScript.leftHand.rotation;
         //Quaternion rightHandRotationOffset = Quaternion.Inverse(rightHandGrabPoint.rotation) * playerAvatarScript.rightHand.rotation;
         
-        Quaternion leftHandRotationOffset = Quaternion.Inverse(playerAvatarScript.leftHand.rotation) * leftHandGrabPoint.rotation;
-        Quaternion rightHandRotationOffset = Quaternion.Inverse(playerAvatarScript.rightHand.rotation) * rightHandGrabPoint.rotation;
+        Quaternion leftHandRotationOffset = Quaternion.Inverse(leftHandGrabPoint.rotation) * playerAvatarScript.leftHand.rotation;
+        Quaternion rightHandRotationOffset = Quaternion.Inverse(rightHandGrabPoint.rotation) * playerAvatarScript.rightHand.rotation;
+        
+        //Quaternion test1 = Quaternion.Inverse(leftHandGrabPoint.rotation) * playerAvatarScript.leftHand.rotation;
+        //Quaternion test2 = Quaternion.Inverse(rightHandGrabPoint.rotation) * playerAvatarScript.rightHand.rotation;
+
+        //Quaternion test3 = Quaternion.Inverse(test1);
+        //Quaternion test4 = Quaternion.Inverse(test2);
         
         if(debugHandPoseCopier)
         {
             Debug.Log("Left Hand Rotation Offset: " + leftHandRotationOffset.eulerAngles);
             Debug.Log("Right Hand Rotation Offset: " + rightHandRotationOffset.eulerAngles);
+            
+            //Debug.Log("Left Hand Rotation Offset 1: " + test1.eulerAngles);
+            //Debug.Log("Right Hand Rotation Offset 1: " + test2.eulerAngles);
+            
+            //Debug.Log("Left Hand Rotation Offset 2: " + test3.eulerAngles);
+            //Debug.Log("Right Hand Rotation Offset 2: " + test4.eulerAngles);
             
             //Debug.Log("Left Hand Rotation Offset 2: " + leftHandRotationOffset2.eulerAngles);
             //Debug.Log("Right Hand Rotation Offset 2: " + rightHandRotationOffset2.eulerAngles);
