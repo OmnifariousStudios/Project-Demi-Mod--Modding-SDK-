@@ -1220,26 +1220,28 @@ public class ProjectDemiModExporter : EditorWindow
 
         if (playerAvatarScript.leftPalm)
         {
-            foreach (var renderer in playerAvatarScript.leftPalm.GetComponentsInChildren<MeshRenderer>())
+            foreach (Transform childTransform in playerAvatarScript.leftPalm)
             {
-                renderer.enabled = true;
+                childTransform.gameObject.SetActive(true);
             }
-            
+
         }
         
         if (playerAvatarScript.rightPalm)
         {
-            foreach (var renderer in playerAvatarScript.rightPalm.GetComponentsInChildren<MeshRenderer>())
+            foreach (Transform childTransform in playerAvatarScript.rightPalm)
             {
-                renderer.enabled = true;
+                childTransform.gameObject.SetActive(true);
             }
         }
         
         if (playerAvatarScript.avatarEyes)
         {
-            foreach (var renderer in playerAvatarScript.avatarEyes.GetComponentsInChildren<MeshRenderer>())
+            playerAvatarScript.avatarEyes.gameObject.SetActive(true);
+            
+            foreach (Transform childTransform in playerAvatarScript.avatarEyes)
             {
-                renderer.enabled = true;
+                childTransform.gameObject.SetActive(true);
             }
         }
     }
@@ -1262,26 +1264,28 @@ public class ProjectDemiModExporter : EditorWindow
 
         if (playerAvatarScript.leftPalm)
         {
-            foreach (var renderer in playerAvatarScript.leftPalm.GetComponentsInChildren<MeshRenderer>())
+            foreach (Transform childTransform in playerAvatarScript.leftPalm)
             {
-                renderer.enabled = false;
+                childTransform.gameObject.SetActive(false);
             }
-            
+
         }
         
         if (playerAvatarScript.rightPalm)
         {
-            foreach (var renderer in playerAvatarScript.rightPalm.GetComponentsInChildren<MeshRenderer>())
+            foreach (Transform childTransform in playerAvatarScript.rightPalm)
             {
-                renderer.enabled = false;
+                childTransform.gameObject.SetActive(false);
             }
         }
-
+        
         if (playerAvatarScript.avatarEyes)
         {
-            foreach (var renderer in playerAvatarScript.avatarEyes.GetComponentsInChildren<MeshRenderer>())
+            playerAvatarScript.avatarEyes.gameObject.SetActive(true);
+            
+            foreach (Transform childTransform in playerAvatarScript.avatarEyes)
             {
-                renderer.enabled = false;
+                childTransform.gameObject.SetActive(false);
             }
         }
 
@@ -1336,10 +1340,10 @@ public class ProjectDemiModExporter : EditorWindow
     
     void ExportWindows() 
     {
-        buildTarget = BuildTarget.StandaloneWindows;
+        buildTarget = BuildTarget.StandaloneWindows64;
         EditorUserBuildSettings.SwitchActiveBuildTarget(BuildTargetGroup.Standalone, BuildTarget.StandaloneWindows64);
         EditorUserBuildSettings.selectedStandaloneTarget = BuildTarget.StandaloneWindows64;
-        BuildAddressable(BuildTarget.StandaloneWindows);
+        BuildAddressable(BuildTarget.StandaloneWindows64);
     }
 
     void ExportAndroid() 
@@ -1381,19 +1385,24 @@ public class ProjectDemiModExporter : EditorWindow
         group.SetDirty(AddressableAssetSettings.ModificationEvent.EntryMoved, entriesAdded, false, true);
         AddressableAssetSettingsDefaultObject.Settings.SetDirty(AddressableAssetSettings.ModificationEvent.EntryMoved, entriesAdded, true, false);
 
-        
+        string windowsbuildPath = "C:/Users/Public/mod.io/4747/mods/{LOCAL_FILE_NAME}/";
+
+        Debug.Log("Build target: " + buildTarget);
+
         // We can dynamically change the LOAD path here, and replace the LOCAL_FILE_NAME with: MOD-ID/BUILD TARGET/AVATAR NAME
         if (buildTarget == BuildTarget.StandaloneWindows64)
         {
             Debug.Log("Setting load path for windows");
             AddressableAssetSettingsDefaultObject.Settings.profileSettings
-                .SetValue(AddressableAssetSettingsDefaultObject.Settings.activeProfileId, "LocalLoadPath", "{UnityEngine.Application.persistentDataPath}/mod.io/04747/data/mods/{LOCAL_FILE_NAME}/");
+                .SetValue(AddressableAssetSettingsDefaultObject.Settings.activeProfileId, "LocalLoadPath", windowsbuildPath); 
+            //"{UnityEngine.Application.persistentDataPath}/mod.io/04747/data/mods/{LOCAL_FILE_NAME}/");
         }
         else if (buildTarget == BuildTarget.Android)
         {
             Debug.Log("Setting load path for android");
             AddressableAssetSettingsDefaultObject.Settings.profileSettings
                 .SetValue(AddressableAssetSettingsDefaultObject.Settings.activeProfileId, "LocalLoadPath", "{UnityEngine.Application.persistentDataPath}/mod.io/4747/mods/{LOCAL_FILE_NAME}/");
+            
         }
 
 

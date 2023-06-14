@@ -17,8 +17,8 @@ MonoBehaviour:
     m_SerializedData: []
   m_GUID: d45708f53d3c5454c91f6c211064d4ae
   m_SerializeEntries:
-  - m_GUID: 156d19f5e1b4b53469340ce62b82f203
-    m_Address: Assets/Futuristic_soldier/Prefabs/Sci-fi_character_unity_red Variant.prefab
+  - m_GUID: da1203547328fdb41974e0b5334e799a
+    m_Address: Assets/Adventure_Character/Prefabs/Man_03.prefab
     m_ReadOnly: 0
     m_SerializedLabels:
     - Player Avatar
