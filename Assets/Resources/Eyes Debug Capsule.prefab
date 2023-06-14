@@ -43,7 +43,7 @@ GameObject:
   - component: {fileID: 4101240958863937938}
   - component: {fileID: 8900537436813744910}
   m_Layer: 0
-  m_Name: Capsule
+  m_Name: Capsule - Don't Move this
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

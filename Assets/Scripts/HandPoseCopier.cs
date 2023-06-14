@@ -112,6 +112,11 @@ public class HandPoseCopier : MonoBehaviour
         currentClipToRecord = handPoseAnimations[0];
             
         // Play the first animation.
+        if (!avatarAnimator)
+        {
+            Debug.Log("No Avatar Animator Found. Please make sure the Avatar Animator is assigned in the inspector.");
+        }
+        
         avatarAnimator.Play(currentClipToRecord.name);
         
         if(currentPoseIndexReadout)

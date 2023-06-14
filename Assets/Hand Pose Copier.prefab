@@ -1,0 +1,104 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &5452797752363423773
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5452797752363423775}
+  - component: {fileID: 5452797752363423774}
+  m_Layer: 0
+  m_Name: Hand Pose Copier
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5452797752363423775
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5452797752363423773}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -2.2779067, y: 1.4898514, z: -0.6437936}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5452797752363423774
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5452797752363423773}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e433f31a972b8324a8e8c16cbc9a5872, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  debugHandPoseCopier: 1
+  playerAvatarScript: {fileID: 0}
+  avatarRuntimeController: {fileID: 9100000, guid: 9369a85c987f2284a9c66826a746ec3c, type: 2}
+  avatarAnimator: {fileID: 0}
+  handPoseAnimations:
+  - {fileID: 7400000, guid: 8c646dd947b54094988df8f903d79310, type: 2}
+  - {fileID: 7400014, guid: 90cbc80a58d78c94ea6837ca62434827, type: 3}
+  - {fileID: 7400000, guid: d7941cff04fa0b84c88dc29769467df7, type: 2}
+  - {fileID: 7400000, guid: 7cb71b805d19c984ca53a60815eb48a2, type: 2}
+  - {fileID: 7400010, guid: 3deb98c5c37815849b21ced9edec8c86, type: 3}
+  - {fileID: 7400010, guid: 3deb98c5c37815849b21ced9edec8c86, type: 3}
+  - {fileID: 7400010, guid: 3deb98c5c37815849b21ced9edec8c86, type: 3}
+  - {fileID: 7400010, guid: 3deb98c5c37815849b21ced9edec8c86, type: 3}
+  - {fileID: 7400000, guid: bd3e44b2e6e29354186199074b1ce843, type: 2}
+  - {fileID: 7400010, guid: 3deb98c5c37815849b21ced9edec8c86, type: 3}
+  - {fileID: 7400010, guid: 3deb98c5c37815849b21ced9edec8c86, type: 3}
+  - {fileID: 7400000, guid: b43f0cbf5f6a22049a09d11b9d51b433, type: 2}
+  - {fileID: 7400000, guid: 145f99e9fd4b39a4baea5530c53f1b08, type: 2}
+  - {fileID: 7400002, guid: be964654afdf19e4eaee2de4833e911d, type: 3}
+  - {fileID: 7400010, guid: 01385e27f578eaa479022fac6bc52b27, type: 3}
+  - {fileID: 7400002, guid: 3da5a75d75089154395589036190ea01, type: 3}
+  rightHandWeaponShapes:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  leftHandWeaponShapes:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  currentWeaponShapeIndex: 0
+  handPoses: []
+  newPose: {fileID: 0}
+  jsonFile: 
+  rightHandIKRotation: {x: 0, y: 0, z: 0, w: 0}
+  leftHandIKRotation: {x: 0, y: 0, z: 0, w: 0}
+  rightHandIKRotationEuler: {x: 0, y: 0, z: 0}
+  leftHandIKRotationEuler: {x: 0, y: 0, z: 0}
+  leftHandPositionOffset: {x: 0, y: 0, z: 0}
+  leftHandRotationOffset: {x: 0, y: 0, z: 0}
+  rightHandPositionOffset: {x: 0, y: 0, z: 0}
+  rightHandRotationOffset: {x: 0, y: 0, z: 0}
+  currentPoseIndex: 0
+  currentPose: {fileID: 0}
+  currentPoseIndexReadout: {fileID: 0}
+  currentPoseReadout: {fileID: 0}
+  currentWeaponShapeReadout: {fileID: 0}
+  poseCompletionReadout: {fileID: 0}

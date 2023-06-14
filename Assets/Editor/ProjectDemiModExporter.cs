@@ -60,9 +60,6 @@ public class ProjectDemiModExporter : EditorWindow
     
     private void OnGUI() 
     {
-        scrollPosition = GUILayout.BeginScrollView(
-            scrollPosition);
-        
         EditorGUIUtility.labelWidth = 80;
         GUILayout.Label("Project Demigod Mod Exporter", EditorStyles.largeLabel);
         GUILayout.Space(10);
@@ -190,6 +187,7 @@ public class ProjectDemiModExporter : EditorWindow
                 
                 if (!animator.avatar.isHuman)
                 {
+                    Debug.Log("Avatar Model is not humanoid! Please convert rig to humanoid in the inspector first.");
                     EditorGUILayout.HelpBox("Avatar Model is not humanoid. Please convert rig to humanoid in the inspector first.", MessageType.Warning);
                     return;
                 }
@@ -458,7 +456,7 @@ public class ProjectDemiModExporter : EditorWindow
         
         GUI.color = Color.white;
         EditorGUILayout.HelpBox("After Setup Avatar is complete, this Enables debug shapes for fingertips, palm shapes, and eyes.", MessageType.Info);
-        if (GUILayout.Button("Enable Debug Shapes", GUILayout.Height(20)))
+        if (GUILayout.Button("Enable All Debug Shapes", GUILayout.Height(20)))
         {
             // Turn on FingerTip and Palm Mesh Renderers.
             if (playerAvatarScript)
@@ -468,7 +466,7 @@ public class ProjectDemiModExporter : EditorWindow
         }
             
         EditorGUILayout.HelpBox("After Setup Avatar is complete, this Disables debug shapes for fingertips, palm shapes, and eyes.", MessageType.Info);
-        if (GUILayout.Button("Disable Debug Shapes", GUILayout.Height(20)))
+        if (GUILayout.Button("Disable All Debug Shapes", GUILayout.Height(20)))
         {
             // Turn off FingerTip and Palm Mesh Renderers.
             if (playerAvatarScript)
@@ -484,9 +482,6 @@ public class ProjectDemiModExporter : EditorWindow
         {
             ResetButtonCompletionStatus();
         }
-        
-        
-        GUILayout.EndScrollView();
     }
 
     private void ResetButtonCompletionStatus()
@@ -592,6 +587,15 @@ public class ProjectDemiModExporter : EditorWindow
             }
             else
             {
+                
+                Debug.Log("No Eye Bones Found. Eyes Debug Shape created. Please the Eyes Debug Shape to the eyes position.");
+                
+                GameObject eyes = Instantiate(Resources.Load("Eyes Debug Capsule", typeof(GameObject))) as GameObject;
+                eyes.transform.SetParent(playerAvatarScript.avatarHead, true);
+                
+                playerAvatarScript.avatarEyes = eyes.transform;
+                
+                /*
                 if (animator.GetBoneTransform(HumanBodyBones.LeftEye) != null && animator.GetBoneTransform(HumanBodyBones.RightEye) != null)
                 {
                     // Create a new gameobject to hold the eyes (so we can rotate them
@@ -615,6 +619,7 @@ public class ProjectDemiModExporter : EditorWindow
                 
                     playerAvatarScript.avatarEyes = eyes.transform;
                 }
+                */
             }
         }
                 
@@ -751,7 +756,7 @@ public class ProjectDemiModExporter : EditorWindow
                 
                 foreach (Transform childTransform in Palm.transform)
                 {
-                    if(childTransform.name == "Sphere" || childTransform.name == "Palm Shape")
+                    if(childTransform.name == "Sphere" || childTransform.name.Contains("Palm Shape"))
                         continue;
                     
                     handPoseCopierScript.leftHandWeaponShapes.Add(childTransform.gameObject);
@@ -807,7 +812,7 @@ public class ProjectDemiModExporter : EditorWindow
                 
                 foreach (Transform childTransform in Palm.transform)
                 {
-                    if(childTransform.name == "Sphere" || childTransform.name == "Palm Shape")
+                    if(childTransform.name == "Sphere" || childTransform.name.Contains("Palm Shape"))
                         continue;
                     
                     handPoseCopierScript.rightHandWeaponShapes.Add(childTransform.gameObject);
@@ -915,15 +920,19 @@ public class ProjectDemiModExporter : EditorWindow
                 tip.name = "FingerTip";
                 tip.GetComponent<SphereCollider>().enabled = false;
                 tipTransform = tip.transform;
-                tipTransform.parent = last;
-                tipTransform.localPosition = Vector3.zero;
-                tipTransform.localRotation = Quaternion.identity;
+                
+                //tipTransform.localPosition = Vector3.zero;
+                //tipTransform.localRotation = Quaternion.identity;
                 tipTransform.localScale = Vector3.one * 0.02f;
+
+                tip.transform.position = last.position;
+                
+                tipTransform.SetParent(last);
             }
             else
             {
                 tipTransform = existing;
-                tipTransform.localScale = Vector3.one * 0.02f;
+                //tipTransform.localScale = Vector3.one * 0.02f;
             }
 
 
