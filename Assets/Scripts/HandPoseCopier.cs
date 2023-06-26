@@ -97,7 +97,7 @@ public class HandPoseCopier : MonoBehaviour
         PoseToShapeDictionary.Add(11, 8);
         
         // Pistol Secondary
-        PoseToShapeDictionary.Add(12, 1);
+        PoseToShapeDictionary.Add(12, 8);
     }
 
     private void Start()

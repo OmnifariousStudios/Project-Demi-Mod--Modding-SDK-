@@ -26,11 +26,11 @@ MonoBehaviour:
   m_ContiguousBundles: 1
   m_StripUnityVersionFromBundleBuild: 0
   m_DisableVisibleSubAssetRepresentations: 0
-  m_ShaderBundleNaming: 0
-  m_ShaderBundleCustomNaming: 
+  m_ShaderBundleNaming: 2
+  m_ShaderBundleCustomNaming: Character 01Shaders3033
   m_MonoScriptBundleNaming: 3
   m_CheckForContentUpdateRestrictionsOption: 0
-  m_MonoScriptBundleCustomNaming: ProjectDemigod
+  m_MonoScriptBundleCustomNaming: Character 01Mono3033
   m_RemoteCatalogBuildPath:
     m_Id: c583c98940729bc419d8ac3cfc0eeb33
   m_RemoteCatalogLoadPath:
@@ -73,7 +73,7 @@ MonoBehaviour:
       - m_Id: c583c98940729bc419d8ac3cfc0eeb33
         m_Value: '[UnityEngine.Application.persistentDataPath]/mod.io/04747/data/mods/'
       - m_Id: 1b69b53f21751aa4ba7b2a59706deb07
-        m_Value: '{UnityEngine.Application.persistentDataPath}/mod.io/04747/data/mods/{LOCAL_FILE_NAME}/'
+        m_Value: C:/Users/Public/mod.io/4747/mods/{LOCAL_FILE_NAME}/
       - m_Id: 715f36e8b43316a43962bfa40da67470
         m_Value: ServerData/[BuildTarget]
       - m_Id: 0bf2132bd24a8e640b52db8c840422a7

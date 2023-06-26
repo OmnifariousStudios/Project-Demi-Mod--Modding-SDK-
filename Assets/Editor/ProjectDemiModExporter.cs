@@ -1,4 +1,5 @@
 #if UNITY_EDITOR
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
@@ -38,9 +39,8 @@ public class ProjectDemiModExporter : EditorWindow
     
     public BuildTarget buildTarget = BuildTarget.StandaloneWindows64;
     
-    float vSbarValue;
-    Vector2 scrollPosition;
     
+
     [MenuItem("Project Demigod/Mod Exporter")]
     public static void ShowMapWindow() 
     {
@@ -54,19 +54,40 @@ public class ProjectDemiModExporter : EditorWindow
         openAfterExport = EditorPrefs.GetBool("OpenAfterExport", false);
         UnityModsFolderPath =  Application.dataPath + "/MODS";
         
-        buildTarget = BuildTarget.StandaloneWindows64;
+        if(buildTarget == BuildTarget.NoTarget)
+            buildTarget = BuildTarget.StandaloneWindows64;
     }
     
     
-    private void OnGUI() 
+    float vSbarValue;
+    public Vector2 scrollPosition = Vector2.zero;
+    
+    private void OnGUI()
     {
         EditorGUIUtility.labelWidth = 80;
         GUILayout.Label("Project Demigod Mod Exporter", EditorStyles.largeLabel);
         GUILayout.Space(10);
 
+        // An absolute-positioned example: We make a scrollview that has a really large client
+        // rect and put it in a small rect on the screen.
+
+        //Rect positionRect = new Rect(0, 0, 500, 1000);
+        //Rect viewRect = new Rect(0, 0, 500, 1000);
+        
+        //scrollPosition = EditorGUILayout.BeginScrollView(positionRect, scrollPosition, viewRect, true, true);
+        
+        
+        
+        GUILayoutOption[] options = { GUILayout.MaxWidth(1000), GUILayout.MinWidth(250) };
+        
+        
+        
+        scrollPosition = EditorGUILayout.BeginScrollView(scrollPosition, options);
+
+
         if (avatarModel == null) 
         {
-            EditorGUILayout.HelpBox("Drag the avatar model here.", MessageType.Info);
+            EditorGUILayout.HelpBox("Drag the avatar model here to continue.", MessageType.Info);
         } 
         else if (avatarModel) 
         {
@@ -77,13 +98,29 @@ public class ProjectDemiModExporter : EditorWindow
             EditorGUILayout.HelpBox(avatarModel + " is empty.", MessageType.Info);
         }
         
+        
         avatarModel = EditorGUILayout.ObjectField("Avatar Model", avatarModel, typeof(GameObject), true) as GameObject;
 
-
+        AddLineAndSpace();
         
-        if (EditorUserBuildSettings.selectedStandaloneTarget == BuildTarget.StandaloneWindows64)
+        EditorGUILayout.HelpBox("Current Target: " + EditorUserBuildSettings.selectedStandaloneTarget.ToString(), MessageType.Info);
+        
+        GUILayout.BeginHorizontal("Switch Platforms", GUI.skin.window);
+
+        using (new EditorGUI.DisabledScope(EditorUserBuildSettings.selectedStandaloneTarget == BuildTarget.StandaloneWindows64))
         {
-            EditorGUILayout.HelpBox("Current Target: Windows", MessageType.Info);
+            //EditorGUILayout.HelpBox("Current Target: Android", MessageType.Info);
+            if(GUILayout.Button("Switch to Windows"))
+            {
+                buildTarget = BuildTarget.StandaloneWindows64;
+                EditorUserBuildSettings.SwitchActiveBuildTarget(BuildTargetGroup.Standalone, BuildTarget.StandaloneWindows64);
+                EditorUserBuildSettings.selectedStandaloneTarget = BuildTarget.StandaloneWindows64;
+            }
+        }
+
+        using (new EditorGUI.DisabledScope(EditorUserBuildSettings.selectedStandaloneTarget == BuildTarget.Android))
+        {
+            //EditorGUILayout.HelpBox("Current Target: Windows", MessageType.Info);
             if(GUILayout.Button("Switch to Android"))
             {
                 buildTarget = BuildTarget.Android;
@@ -91,29 +128,10 @@ public class ProjectDemiModExporter : EditorWindow
                 EditorUserBuildSettings.selectedStandaloneTarget = BuildTarget.Android;
             }
         }
-        else if(EditorUserBuildSettings.selectedStandaloneTarget == BuildTarget.Android)
-        {
-            EditorGUILayout.HelpBox("Current Target: Android", MessageType.Info);
-            if(GUILayout.Button("Switch to Windows"))
-            {
-                buildTarget = BuildTarget.StandaloneWindows64;
-                EditorUserBuildSettings.SwitchActiveBuildTarget(BuildTargetGroup.Standalone, BuildTarget.StandaloneWindows64);
-                EditorUserBuildSettings.selectedStandaloneTarget = BuildTarget.StandaloneWindows64;
-            }
-        }
-        else
-        {
-            EditorGUILayout.HelpBox("Current Target: None", MessageType.Info);
-            if(GUILayout.Button("Switch to Windows"))
-            {
-                buildTarget = BuildTarget.StandaloneWindows64;
-                EditorUserBuildSettings.SwitchActiveBuildTarget(BuildTargetGroup.Standalone, BuildTarget.StandaloneWindows64);
-                EditorUserBuildSettings.selectedStandaloneTarget = BuildTarget.StandaloneWindows64;
-            }
-        }
 
-        
-        
+        GUILayout.EndHorizontal();
+
+
         if (avatarModel)
             avatarName = avatarModel.name;
         else
@@ -127,18 +145,16 @@ public class ProjectDemiModExporter : EditorWindow
             ExportSettings();
         
         DrawUILine(Color.blue);
-        
-        
-        if (avatarModel == null)
-            EditorGUILayout.HelpBox("Please add a Humanoid Avatar to continue.", MessageType.Warning);
 
-        
+
 
         using (new EditorGUI.DisabledScope(avatarModel == null))
         {
             GUI.color = Color.white;
             
             EditorGUILayout.HelpBox("Use this button first to get all references and add necessary scripts.", MessageType.Info);
+            
+            AvatarSetupComplete = playerAvatarScript != null && animator != null && animator.avatar != null && animator.avatar.isHuman;
             
             if (AvatarSetupComplete)
             {
@@ -258,9 +274,7 @@ public class ProjectDemiModExporter : EditorWindow
 
             
             
-            GUILayout.Space(10);
-            DrawUILine(Color.blue);
-            GUILayout.Space(10);
+            AddLineAndSpace();
             
             GUI.color = Color.white;
             //EditorGUILayout.HelpBox("Warning. These buttons will clear all material settings and any changes you made.", MessageType.Warning);
@@ -275,6 +289,9 @@ public class ProjectDemiModExporter : EditorWindow
                 GUI.color = Color.white;
             }
             
+            
+            GUILayout.BeginHorizontal("Material Settings", GUI.skin.window);
+            
             if (GUILayout.Button("Create Custom Material Settings", GUILayout.Height(20)))
             {
                 GenerateCustomMaterialSettings();
@@ -286,9 +303,9 @@ public class ProjectDemiModExporter : EditorWindow
                 ClearCustomMaterialSettings();
             }
             
-            GUILayout.Space(10);
-            DrawUILine(Color.blue);
-            GUILayout.Space(10);
+            GUILayout.EndHorizontal();
+            
+            AddLineAndSpace();
 
             GUI.color = Color.white;
             
@@ -316,16 +333,15 @@ public class ProjectDemiModExporter : EditorWindow
             
         }
         
-        GUILayout.Space(10);
-        DrawUILine(Color.blue);
-        GUILayout.Space(10);
+        AddLineAndSpace();
         
-        bool canBuild = avatarModel != null; //&& configuredGamemodes.Count != 0;
+        bool canBuild = avatarModel != null;
         
         
         using (new EditorGUI.DisabledScope(!canBuild)) 
         {
-            if (GUILayout.Button("Build Windows", GUILayout.Height(20)))
+            GUILayout.BeginHorizontal("Build the Mods", GUI.skin.window);
+            if (GUILayout.Button("Build for Windows (PCVR)", GUILayout.Height(20)))
             {
                 DisableDebugRenderers();
                 
@@ -346,7 +362,7 @@ public class ProjectDemiModExporter : EditorWindow
                 RetrievePrefabInstanceFromScene();
             }
 
-            if (GUILayout.Button("Build Android", GUILayout.Height(20)))
+            if (GUILayout.Button("Build for Android (Quest)", GUILayout.Height(20)))
             {
                 DisableDebugRenderers();
                 
@@ -366,12 +382,13 @@ public class ProjectDemiModExporter : EditorWindow
                 
                 RetrievePrefabInstanceFromScene();
             }
+            
+            GUILayout.EndHorizontal();
         }
         
-        GUILayout.Space(10);
-        DrawUILine(Color.blue);
-        GUILayout.Space(10);
         
+        AddLineAndSpace();
+
         
         using(new EditorGUI.DisabledScope(avatarModel == null))
         {
@@ -440,40 +457,50 @@ public class ProjectDemiModExporter : EditorWindow
         }
         
         
-        GUILayout.Space(20);
-        DrawUILine(Color.blue);
-        GUILayout.Space(20);
+        AddLineAndSpace();
         
-        
-        if(GUILayout.Button("Save Avatar Prefab", GUILayout.Height(20)))
+        using (new EditorGUI.DisabledScope(avatarModel == null))
         {
-            if (avatarModel)
+            if (GUILayout.Button("Save Avatar Prefab", GUILayout.Height(20)))
             {
-                Debug.Log("Saving Avatar Prefab");
-                PrefabUtility.ApplyPrefabInstance(avatarModel, InteractionMode.UserAction);
+                if (avatarModel)
+                {
+                    Debug.Log("Saving Avatar Prefab");
+                    PrefabUtility.ApplyPrefabInstance(avatarModel, InteractionMode.UserAction);
+                }
             }
         }
+
+        AddLineAndSpace();
+        
         
         GUI.color = Color.white;
-        EditorGUILayout.HelpBox("After Setup Avatar is complete, this Enables debug shapes for fingertips, palm shapes, and eyes.", MessageType.Info);
-        if (GUILayout.Button("Enable All Debug Shapes", GUILayout.Height(20)))
+        using (new EditorGUI.DisabledScope(avatarModel == null))
         {
-            // Turn on FingerTip and Palm Mesh Renderers.
-            if (playerAvatarScript)
+            GUILayout.BeginHorizontal("Debug Shapes", GUI.skin.window);
+
+            //EditorGUILayout.HelpBox("Enables Debug shapes", MessageType.Info);
+            if (GUILayout.Button("Enable All Debug Shapes", GUILayout.Height(20)))
             {
-                EnableDebugRenderers();
+                // Turn on FingerTip and Palm Mesh Renderers.
+                if (playerAvatarScript)
+                {
+                    EnableDebugRenderers();
+                }
+            }
+
+            //EditorGUILayout.HelpBox("Disables Debug Shapes", MessageType.Info);
+            if (GUILayout.Button("Disable All Debug Shapes", GUILayout.Height(20)))
+            {
+                // Turn off FingerTip and Palm Mesh Renderers.
+                if (playerAvatarScript)
+                {
+                    DisableDebugRenderers();
+                }
             }
         }
-            
-        EditorGUILayout.HelpBox("After Setup Avatar is complete, this Disables debug shapes for fingertips, palm shapes, and eyes.", MessageType.Info);
-        if (GUILayout.Button("Disable All Debug Shapes", GUILayout.Height(20)))
-        {
-            // Turn off FingerTip and Palm Mesh Renderers.
-            if (playerAvatarScript)
-            {
-                DisableDebugRenderers();
-            }
-        }
+        
+        GUILayout.EndHorizontal();
         
         
         EditorGUILayout.HelpBox("Use this button to reset this Mod Exporter Tab.", MessageType.Info);
@@ -482,7 +509,28 @@ public class ProjectDemiModExporter : EditorWindow
         {
             ResetButtonCompletionStatus();
         }
+        
+        
+        
+        // End the scroll view that we began above.
+        EditorGUILayout.EndScrollView();
+        
+        //EditorGUILayout.EndHorizontal();
     }
+    
+    private void AddLine()
+    {
+        DrawUILine(Color.blue);
+    }
+    
+    private void AddLineAndSpace()
+    {
+        GUILayout.Space(10);
+        DrawUILine(Color.blue);
+        GUILayout.Space(10);
+    }
+    
+    
 
     private void ResetButtonCompletionStatus()
     {
@@ -649,10 +697,17 @@ public class ProjectDemiModExporter : EditorWindow
             {
                 foreach (Transform forearmChild in playerAvatarScript.leftForearm.parent)
                 {
-                    Debug.Log("Testing Forearm Child: " + forearmChild.name);
-                    
                     if(forearmChild.name.Contains("Twist") || forearmChild.name.Contains("twist"))
                         playerAvatarScript.leftForearmTwist = forearmChild;
+                }
+
+                if (playerAvatarScript.leftForearmTwist == null)
+                {
+                    foreach (Transform forearmChild in playerAvatarScript.leftForearm)
+                    {
+                        if(forearmChild.name.Contains("Twist") || forearmChild.name.Contains("twist"))
+                            playerAvatarScript.leftForearmTwist = forearmChild;
+                    }
                 }
             }
         }
@@ -665,6 +720,15 @@ public class ProjectDemiModExporter : EditorWindow
                 {
                     if(forearmChild.name.Contains("Twist") || forearmChild.name.Contains("twist"))
                         playerAvatarScript.rightForearmTwist = forearmChild;
+                }
+                
+                if(playerAvatarScript.rightForearmTwist == null)
+                {
+                    foreach (Transform forearmChild in playerAvatarScript.rightForearm)
+                    {
+                        if(forearmChild.name.Contains("Twist") || forearmChild.name.Contains("twist"))
+                            playerAvatarScript.rightForearmTwist = forearmChild;
+                    }
                 }
             }
         }
@@ -1146,8 +1210,8 @@ public class ProjectDemiModExporter : EditorWindow
 
         for (int i = 0; i < avatarRenderers.Count; i++)
         {
-            if(avatarRenderers[i].name.Contains("FingerTip") || avatarRenderers[i].name.Contains("Palm") 
-                || avatarRenderers[i].name == "Cube" || avatarRenderers[i].name == "Capsule")
+            if(avatarRenderers[i].name.Contains("FingerTip") || avatarRenderers[i].name.Contains("Palm") || avatarRenderers[i].name == "Cube" 
+               || avatarRenderers[i].name == "Capsule" || avatarRenderers[i].transform.parent.name.Contains("Palm Shape") || avatarRenderers[i].name.Contains("Don't Move"))
             {
                 avatarRenderers.RemoveAt(i);
                 i--;
@@ -1161,12 +1225,15 @@ public class ProjectDemiModExporter : EditorWindow
             if (avatarRenderers[i])
             {
                 CustomMaterialSetting newSetting = new CustomMaterialSetting();
-
+                
                 newSetting.renderer = avatarRenderers[i];
 
                 newSetting.rendererNameForUserInterface = newSetting.renderer.name;
                         
-                newSetting.originalMaterial = newSetting.renderer.sharedMaterial;
+                if(newSetting.renderer && newSetting.renderer.sharedMaterial)
+                    newSetting.originalMaterial = newSetting.renderer.sharedMaterial;
+    
+                
                 newSetting.originalMaterialMainTexture = newSetting.renderer.sharedMaterial.mainTexture;
                 newSetting.originalMaterialUsingTexture = true;
 
@@ -1328,7 +1395,7 @@ public class ProjectDemiModExporter : EditorWindow
         if (GUILayout.Button("Open Export Folder"))
             EditorUtility.RevealInFinder(basePath + "/");
 
-        EditorGUIUtility.labelWidth = 190;
+        EditorGUIUtility.labelWidth = 200;
         openAfterExport = EditorGUILayout.Toggle("Open Export Folder On Complete", openAfterExport);
         EditorPrefs.SetBool("OpenAfterExport", openAfterExport);
 
@@ -1381,6 +1448,14 @@ public class ProjectDemiModExporter : EditorWindow
         var guid = AssetDatabase.AssetPathToGUID(prefabRelativeToProjectPath);
         
         
+        // Set the bundles' naming style to custom, and make the name as unique as possible to avoid cross-mod conflicts.
+        AddressableAssetSettingsDefaultObject.Settings.ShaderBundleNaming = ShaderBundleNaming.Custom;
+        AddressableAssetSettingsDefaultObject.Settings.ShaderBundleCustomNaming = avatarName + "Shaders" + DateTime.Now.Minute + DateTime.Now.Second;
+        
+        AddressableAssetSettingsDefaultObject.Settings.MonoScriptBundleNaming = MonoScriptBundleNaming.Custom;
+        AddressableAssetSettingsDefaultObject.Settings.MonoScriptBundleCustomNaming = avatarName + "Mono" + DateTime.Now.Minute + DateTime.Now.Second;
+
+
         if (group == null || guid == null)
             return;
 
