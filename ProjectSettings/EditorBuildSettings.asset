@@ -7,3 +7,4 @@ EditorBuildSettings:
   m_Scenes: []
   m_configObjects:
     com.unity.addressableassets: {fileID: 11400000, guid: d8318898df55bf948b8adbf1c8193352, type: 2}
+    com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 695385685a4e8c94998a33b44c0bf18c, type: 2}
