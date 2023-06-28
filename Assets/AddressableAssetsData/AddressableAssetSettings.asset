@@ -27,10 +27,10 @@ MonoBehaviour:
   m_StripUnityVersionFromBundleBuild: 0
   m_DisableVisibleSubAssetRepresentations: 0
   m_ShaderBundleNaming: 2
-  m_ShaderBundleCustomNaming: Character 01Shaders3033
+  m_ShaderBundleCustomNaming: Sci_Fi_Character_08_01Shaders3921
   m_MonoScriptBundleNaming: 3
   m_CheckForContentUpdateRestrictionsOption: 0
-  m_MonoScriptBundleCustomNaming: Character 01Mono3033
+  m_MonoScriptBundleCustomNaming: Sci_Fi_Character_08_01Mono3921
   m_RemoteCatalogBuildPath:
     m_Id: c583c98940729bc419d8ac3cfc0eeb33
   m_RemoteCatalogLoadPath:
@@ -43,6 +43,7 @@ MonoBehaviour:
   m_GroupAssets:
   - {fileID: 11400000, guid: b7199bcb4c16699498533fc9497fbb6c, type: 2}
   - {fileID: 11400000, guid: 30ee74447932c05468a1981f48f1d944, type: 2}
+  - {fileID: 11400000, guid: b52dbc9a0b69a5f4eb0145d1091a3a66, type: 2}
   m_BuildSettings:
     m_CompileScriptsInVirtualMode: 0
     m_CleanupStreamingAssetsAfterBuilds: 1
