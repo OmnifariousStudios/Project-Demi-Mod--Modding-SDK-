@@ -30,13 +30,6 @@ ShaderVariantCollection:
         passType: 0
       - keywords: BILLBOARD_FACE_CAMERA_POS UNITY_UI_ALPHACLIP
         passType: 0
-  - first: {fileID: 66, guid: 0000000000000000f000000000000000, type: 0}
-    second:
-      variants:
-      - keywords: 
-        passType: 0
-      - keywords: STEREO_INSTANCING_ON
-        passType: 0
   - first: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
     second:
       variants:
@@ -67,15 +60,6 @@ ShaderVariantCollection:
         passType: 8
       - keywords: _EMISSION _METALLICGLOSSMAP _NORMALMAP
         passType: 8
-  - first: {fileID: 106, guid: 0000000000000000f000000000000000, type: 0}
-    second:
-      variants:
-      - keywords: BILLBOARD_FACE_CAMERA_POS SOFTPARTICLES_ON UNITY_HDR_ON
-        passType: 0
-      - keywords: STEREO_INSTANCING_ON _SUNDISK_SIMPLE
-        passType: 0
-      - keywords: BILLBOARD_FACE_CAMERA_POS SOFTPARTICLES_ON UNITY_HDR_ON _SUNDISK_SIMPLE
-        passType: 0
   - first: {fileID: 9000, guid: 0000000000000000f000000000000000, type: 0}
     second:
       variants:
