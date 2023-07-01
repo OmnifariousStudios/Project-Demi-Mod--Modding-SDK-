@@ -16,13 +16,7 @@ MonoBehaviour:
   m_Data:
     m_SerializedData: []
   m_GUID: d45708f53d3c5454c91f6c211064d4ae
-  m_SerializeEntries:
-  - m_GUID: bc0db8f04b753bd49b7f06ae6ab40513
-    m_Address: Assets/Sci_Fi_Character_08/Prefabs/Sci_Fi_Character_08_01.prefab
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - Player Avatar
-    FlaggedDuringContentUpdateRestriction: 0
+  m_SerializeEntries: []
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: ab3ef46107c2bfb499cc177a1efc4d32, type: 2}
   m_SchemaSet:

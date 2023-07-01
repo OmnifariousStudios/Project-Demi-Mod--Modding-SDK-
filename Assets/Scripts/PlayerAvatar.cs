@@ -34,6 +34,9 @@ public class PlayerAvatar : MonoBehaviour
     public Transform leftForearmTwist;
     public Transform rightForearmTwist;
 
+    public TwistSolver leftHandTwistSolver;
+    public TwistSolver rightHandTwistSolver;
+    
     private Vector3 leftHandPositionOffset = Vector3.zero;
     private Vector3 leftHandRotationOffset = Vector3.zero;
 
