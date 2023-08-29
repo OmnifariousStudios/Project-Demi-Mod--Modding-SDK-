@@ -27,10 +27,10 @@ MonoBehaviour:
   m_StripUnityVersionFromBundleBuild: 0
   m_DisableVisibleSubAssetRepresentations: 0
   m_ShaderBundleNaming: 2
-  m_ShaderBundleCustomNaming: Sci_Fi_Character_08_03Shaders4730
+  m_ShaderBundleCustomNaming: NYC Satellite MapShaders2145
   m_MonoScriptBundleNaming: 3
   m_CheckForContentUpdateRestrictionsOption: 0
-  m_MonoScriptBundleCustomNaming: Sci_Fi_Character_08_03Mono4730
+  m_MonoScriptBundleCustomNaming: NYC Satellite MapMono2145
   m_RemoteCatalogBuildPath:
     m_Id: c583c98940729bc419d8ac3cfc0eeb33
   m_RemoteCatalogLoadPath:

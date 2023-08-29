@@ -13,6 +13,10 @@ TagManager:
   - UI
   - 
   - 
+  - Player
+  - Enemy
+  - Terrain
+  - Triggers
   - 
   - 
   - 
@@ -21,22 +25,18 @@ TagManager:
   - 
   - 
   - 
+  - Road
+  - 
+  - Ground
   - 
   - 
   - 
   - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Close Range Objects
+  - Medium Range Objects
+  - Long Range Objects
+  - Character
+  - Ragdoll
   m_SortingLayers:
   - name: Default
     uniqueID: 0
