@@ -28,7 +28,7 @@ public class ProjectDemiModMapExporter : EditorWindow
 
     public SceneController currentSceneController;
     public GameObject currentPlayerSpawnpoint;
-    public GameObject currentEnemySpawnpoint;
+    [FormerlySerializedAs("currentEnemySpawnpoint")] public GameObject currentEnemySpawnpointsHolder;
 
 
     public BuildTarget buildTarget = BuildTarget.StandaloneWindows64;
@@ -104,13 +104,19 @@ public class ProjectDemiModMapExporter : EditorWindow
             GetCurrentScene();
             AddSceneController();
             AddPlayerSpawnPoint();
-            AddEnemySpawnPoint();
+            AddEnemySpawnPointHolder();
             AddInterfaceSpawnPoints();
             AddShieldWalls();
             DestroyCamera();
             GetSceneLights();
         }
+        
+        if (GUILayout.Button("Add Enemy Spawnpoint"))
+        {
+            CreateEnemySpawnPoint();
+        }
 
+        
         if (GUILayout.Button("Bake Nav Mesh"))
         {
             NavMeshBuilder.BuildNavMesh();
@@ -216,6 +222,10 @@ public class ProjectDemiModMapExporter : EditorWindow
         if (GUILayout.Button("Finish Setup", GUILayout.Height(20)))
         {
 
+            DisableInterfaceSpawnPoints();
+            DisableShieldWallRenderers();
+            DisableEnemySpawnpointShapes();
+            
             string mapModFolderPath = CheckForMapModPath();
 
             if (mapModFolderPath == "")
@@ -301,41 +311,94 @@ public class ProjectDemiModMapExporter : EditorWindow
         }
     }
 
-    void AddEnemySpawnPoint()
+    void AddEnemySpawnPointHolder()
     {
-        GameObject enemySpawnPoint = GameObject.Find("Enemy Spawnpoint");
+        GameObject newEnemySpawnPointsHolder = GameObject.Find("Enemy Spawnpoints Holder");
 
-        if (enemySpawnPoint == null)
+        if (newEnemySpawnPointsHolder == null)
         {
-            GameObject newEnemySpawnPoint = new GameObject("Enemy Spawnpoint");
-            newEnemySpawnPoint.transform.position = Vector3.zero;
-            newEnemySpawnPoint.transform.rotation = Quaternion.identity;
+            newEnemySpawnPointsHolder = GameObject.CreatePrimitive(PrimitiveType.Capsule);
+            
+            newEnemySpawnPointsHolder.GetComponent<CapsuleCollider>().enabled = false;
+            
+            newEnemySpawnPointsHolder.name = "Enemy Spawnpoints Holder";
+            
+            newEnemySpawnPointsHolder.transform.position = Vector3.zero;
+            newEnemySpawnPointsHolder.transform.rotation = Quaternion.identity;
 
-            currentEnemySpawnpoint = newEnemySpawnPoint;
+            currentEnemySpawnpointsHolder = newEnemySpawnPointsHolder;
 
             if (currentSceneController)
             {
-                currentSceneController.enemySpawnpointsHolder = currentEnemySpawnpoint;
+                currentSceneController.enemySpawnpointsHolder = currentEnemySpawnpointsHolder;
             }
+            
+            CreateEnemySpawnPoint();
         }
         else
         {
-            currentEnemySpawnpoint = enemySpawnPoint;
+            currentEnemySpawnpointsHolder = newEnemySpawnPointsHolder;
 
             if (currentSceneController)
             {
-                currentSceneController.enemySpawnpointsHolder = currentEnemySpawnpoint;
+                currentSceneController.enemySpawnpointsHolder = currentEnemySpawnpointsHolder;
             }
         }
+    }
+
+    void CreateEnemySpawnPoint()
+    {
+        if(currentSceneController == null || currentSceneController.enemySpawnpointsHolder == null)
+        {
+            GetCurrentScene();
+            AddSceneController();
+            AddPlayerSpawnPoint();
+            AddEnemySpawnPointHolder();
+        }
+        
+        GameObject newEnemySpawnPoint = GameObject.CreatePrimitive(PrimitiveType.Cube);
+        
+        newEnemySpawnPoint.GetComponent<BoxCollider>().enabled = false;
+        newEnemySpawnPoint.name = "Enemy Spawnpoint";
+        newEnemySpawnPoint.transform.parent = currentEnemySpawnpointsHolder.transform;
+        newEnemySpawnPoint.transform.localPosition = Vector3.zero;
+        newEnemySpawnPoint.transform.localRotation = Quaternion.identity;
     }
 
 
     void AddInterfaceSpawnPoints()
     {
-        GameObject avatarCalibratorShape = Instantiate(Resources.Load("Avatar Calibrator Shape", typeof(GameObject))) as GameObject;
-        GameObject levelSelectShape = Instantiate(Resources.Load("Level Select Shape", typeof(GameObject))) as GameObject;
-        GameObject playerArmoryShape = Instantiate(Resources.Load("Player Armory Shape", typeof(GameObject))) as GameObject;
-        GameObject enemySpawnerShape = Instantiate(Resources.Load("Enemy Spawn Controller Shape", typeof(GameObject))) as GameObject;
+        GameObject avatarCalibratorShape = GameObject.Find("Avatar Calibrator Shape");
+        
+        GameObject levelSelectShape = GameObject.Find("Level Select Shape");
+        
+        GameObject playerArmoryShape = GameObject.Find("Player Armory Shape");
+        
+        GameObject enemySpawnerShape = GameObject.Find("Enemy Spawn Controller Shape");
+        
+        if(!avatarCalibratorShape)
+        {
+            avatarCalibratorShape = Instantiate(Resources.Load("Avatar Calibrator Shape", typeof(GameObject))) as GameObject;
+            avatarCalibratorShape.name = "Avatar Calibrator Shape";
+        }
+        
+        if(!levelSelectShape)
+        {
+            levelSelectShape = Instantiate(Resources.Load("Level Select Shape", typeof(GameObject))) as GameObject;
+            levelSelectShape.name = "Level Select Shape";
+        }
+    
+        if(!playerArmoryShape)
+        {
+            playerArmoryShape = Instantiate(Resources.Load("Player Armory Shape", typeof(GameObject))) as GameObject;
+            playerArmoryShape.name = "Player Armory Shape";
+        }
+        
+        if(!enemySpawnerShape)
+        {
+            enemySpawnerShape = Instantiate(Resources.Load("Enemy Spawn Controller Shape", typeof(GameObject))) as GameObject;
+            enemySpawnerShape.name = "Enemy Spawn Controller Shape";
+        }
 
         if (!currentSceneController)
             AddSceneController();
@@ -386,6 +449,7 @@ public class ProjectDemiModMapExporter : EditorWindow
         if (shieldWalls == null)
         {
             GameObject newShieldWalls = Instantiate(Resources.Load("Shield Walls", typeof(GameObject))) as GameObject;
+            newShieldWalls.name = "Shield Walls";
             newShieldWalls.transform.position = Vector3.zero;
             newShieldWalls.transform.rotation = Quaternion.identity;
         }
@@ -409,7 +473,7 @@ public class ProjectDemiModMapExporter : EditorWindow
         }
     }
 
-private void DisableShieldWallRenderers()
+    private void DisableShieldWallRenderers()
     {
         GameObject shieldWalls = GameObject.Find("Shield Walls");
 
@@ -426,6 +490,24 @@ private void DisableShieldWallRenderers()
             }
         }
     }
+
+    private void DisableEnemySpawnpointShapes()
+    {
+        if (currentSceneController == null || currentSceneController.enemySpawnpointsHolder == null)
+        {
+            return;
+        }
+        else
+        {
+            currentSceneController.enemySpawnpointsHolder.GetComponent<MeshRenderer>().enabled = false;
+
+            foreach (var childMesh in currentSceneController.enemySpawnpointsHolder.GetComponentsInChildren<MeshRenderer>())
+            {
+                childMesh.enabled = false;
+            }
+        }
+    }
+
 
     void DestroyCamera()
     {
