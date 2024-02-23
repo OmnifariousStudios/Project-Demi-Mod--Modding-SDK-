@@ -1478,7 +1478,7 @@ public class ProjectDemiModAvatarExporter : EditorWindow
         {
             Debug.Log("Setting load path for windows");
             AddressableAssetSettingsDefaultObject.Settings.profileSettings
-                .SetValue(AddressableAssetSettingsDefaultObject.Settings.activeProfileId, "LocalLoadPath", editorPath); 
+                .SetValue(AddressableAssetSettingsDefaultObject.Settings.activeProfileId, "LocalLoadPath", windowsbuildPath); 
             
         }
         else if (buildTarget == BuildTarget.Android)
